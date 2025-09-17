@@ -82,12 +82,7 @@
     </visualElement>
     <visualElement>
       <elementName>Not</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Bits</string>
-          <int>4</int>
-        </entry>
-      </elementAttributes>
+      <elementAttributes/>
       <pos x="720" y="280"/>
     </visualElement>
     <visualElement>
