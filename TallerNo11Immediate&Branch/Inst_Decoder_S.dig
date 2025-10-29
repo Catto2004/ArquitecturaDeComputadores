@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes>
+    <entry>
+      <string>romContent</string>
+      <romList>
+        <roms/>
+      </romList>
+    </entry>
+    <entry>
+      <string>Width</string>
+      <int>10</int>
+    </entry>
+  </attributes>
+  <visualElements>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Instruction</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="180" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Immediate</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>7-11,25-31, 31-31</string>
+        </entry>
+      </elementAttributes>
+      <pos x="260" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>0-4, 5-11</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>0-11</string>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>splitterSpreading</string>
+          <int>2</int>
+        </entry>
+        <entry>
+          <string>Input Splitting</string>
+          <string>0-11, 12-31</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>32</string>
+        </entry>
+      </elementAttributes>
+      <pos x="500" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>BitExtender</elementName>
+      <elementAttributes>
+        <entry>
+          <string>inputBits</string>
+          <int>1</int>
+        </entry>
+        <entry>
+          <string>outputBits</string>
+          <int>20</int>
+        </entry>
+      </elementAttributes>
+      <pos x="360" y="520"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="180" y="480"/>
+      <p2 x="260" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="480"/>
+      <p2 x="500" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="280" y="480"/>
+      <p2 x="400" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="480"/>
+      <p2 x="600" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="280" y="500"/>
+      <p2 x="400" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="280" y="520"/>
+      <p2 x="360" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="520"/>
+      <p2 x="500" y="520"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
