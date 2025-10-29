@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
   <version>2</version>
-  <attributes/>
+  <attributes>
+    <entry>
+      <string>romContent</string>
+      <romList>
+        <roms/>
+      </romList>
+    </entry>
+    <entry>
+      <string>Width</string>
+      <int>14</int>
+    </entry>
+  </attributes>
   <visualElements>
     <visualElement>
       <elementName>Deco_32bit.dig</elementName>
@@ -13,7 +24,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>Inst</string>
+          <string>Instruction</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -173,15 +184,15 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
-        </entry>
-        <entry>
-          <string>intFormat</string>
-          <intFormat>bin</intFormat>
+          <long>51</long>
         </entry>
         <entry>
           <string>Bits</string>
           <int>7</int>
+        </entry>
+        <entry>
+          <string>intFormat</string>
+          <intFormat>bin</intFormat>
         </entry>
       </elementAttributes>
       <pos x="1780" y="380"/>
@@ -191,7 +202,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>19</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -209,7 +220,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>35</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -227,7 +238,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>3</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -245,7 +256,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>111</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -263,7 +274,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>103</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -281,7 +292,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>35</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -299,7 +310,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>3</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -317,7 +328,7 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>99</long>
         </entry>
         <entry>
           <string>Bits</string>
@@ -374,12 +385,12 @@
       <elementName>Multiplexer</elementName>
       <elementAttributes>
         <entry>
-          <string>flipSelPos</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
           <string>Bits</string>
           <int>2</int>
+        </entry>
+        <entry>
+          <string>flipSelPos</string>
+          <boolean>true</boolean>
         </entry>
       </elementAttributes>
       <pos x="2300" y="720"/>
@@ -575,7 +586,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>Function 7</string>
+          <string>Function7</string>
         </entry>
       </elementAttributes>
       <pos x="2640" y="1600"/>
