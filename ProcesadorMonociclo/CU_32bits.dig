@@ -171,12 +171,7 @@
     </visualElement>
     <visualElement>
       <elementName>Not</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Bits</string>
-          <int>7</int>
-        </entry>
-      </elementAttributes>
+      <elementAttributes/>
       <pos x="2120" y="380"/>
     </visualElement>
     <visualElement>
@@ -402,6 +397,10 @@
           <string>Label</string>
           <string>WBSel</string>
         </entry>
+        <entry>
+          <string>Bits</string>
+          <int>2</int>
+        </entry>
       </elementAttributes>
       <pos x="2640" y="740"/>
     </visualElement>
@@ -424,7 +423,11 @@
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>2</long>
+          <long>0</long>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>2</int>
         </entry>
       </elementAttributes>
       <pos x="2180" y="740"/>
@@ -433,8 +436,8 @@
       <elementName>Const</elementName>
       <elementAttributes>
         <entry>
-          <string>Value</string>
-          <long>2</long>
+          <string>Bits</string>
+          <int>2</int>
         </entry>
       </elementAttributes>
       <pos x="2260" y="720"/>
@@ -541,6 +544,10 @@
       <elementName>Multiplexer</elementName>
       <elementAttributes>
         <entry>
+          <string>Bits</string>
+          <int>3</int>
+        </entry>
+        <entry>
           <string>flipSelPos</string>
           <boolean>true</boolean>
         </entry>
@@ -553,6 +560,10 @@
         <entry>
           <string>Value</string>
           <long>0</long>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>3</int>
         </entry>
       </elementAttributes>
       <pos x="2320" y="1540"/>
@@ -578,6 +589,10 @@
           <string>Label</string>
           <string>Function3</string>
         </entry>
+        <entry>
+          <string>Bits</string>
+          <int>3</int>
+        </entry>
       </elementAttributes>
       <pos x="2640" y="1520"/>
     </visualElement>
@@ -588,6 +603,10 @@
           <string>Label</string>
           <string>Function7</string>
         </entry>
+        <entry>
+          <string>Bits</string>
+          <int>7</int>
+        </entry>
       </elementAttributes>
       <pos x="2640" y="1600"/>
     </visualElement>
@@ -597,6 +616,10 @@
         <entry>
           <string>Label</string>
           <string>OpCode</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>7</int>
         </entry>
       </elementAttributes>
       <pos x="2640" y="1680"/>
