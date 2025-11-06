@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
   <version>2</version>
-  <attributes/>
+  <attributes>
+    <entry>
+      <string>romContent</string>
+      <romList>
+        <roms/>
+      </romList>
+    </entry>
+    <entry>
+      <string>Width</string>
+      <int>8</int>
+    </entry>
+  </attributes>
   <visualElements>
     <visualElement>
       <elementName>BlockRAMDualPort</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>Byte 0</string>
-        </entry>
-        <entry>
           <string>AddrBits</string>
           <int>16</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Byte 0</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -25,12 +36,12 @@
       <elementName>BlockRAMDualPort</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>Byte 1</string>
-        </entry>
-        <entry>
           <string>AddrBits</string>
           <int>16</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Byte 1</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -43,12 +54,12 @@
       <elementName>BlockRAMDualPort</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>Byte 2</string>
-        </entry>
-        <entry>
           <string>AddrBits</string>
           <int>16</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Byte 2</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -61,12 +72,12 @@
       <elementName>BlockRAMDualPort</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>Byte 3</string>
-        </entry>
-        <entry>
           <string>AddrBits</string>
           <int>16</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Byte 3</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -104,7 +115,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>DMWen</string>
+          <string>DMwrEna</string>
         </entry>
       </elementAttributes>
       <pos x="60" y="540"/>
@@ -559,12 +570,12 @@
       <elementName>Splitter</elementName>
       <elementAttributes>
         <entry>
-          <string>Input Splitting</string>
-          <string>32</string>
-        </entry>
-        <entry>
           <string>splitterSpreading</string>
           <int>2</int>
+        </entry>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
         </entry>
         <entry>
           <string>Output Splitting</string>
@@ -1012,7 +1023,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>Out</string>
+          <string>DataRD</string>
         </entry>
         <entry>
           <string>Bits</string>
