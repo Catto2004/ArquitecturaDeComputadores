@@ -181,6 +181,10 @@
           <string>Bits</string>
           <int>32</int>
         </entry>
+        <entry>
+          <string>barrelSigned</string>
+          <boolean>true</boolean>
+        </entry>
       </elementAttributes>
       <pos x="960" y="360"/>
     </visualElement>
@@ -728,6 +732,30 @@
       </elementAttributes>
       <pos x="1600" y="140"/>
     </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>0-5, 6-6</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>7</string>
+        </entry>
+      </elementAttributes>
+      <pos x="920" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Value</string>
+          <long>0</long>
+        </entry>
+      </elementAttributes>
+      <pos x="860" y="420"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -803,12 +831,16 @@
       <p2 x="500" y="460"/>
     </wire>
     <wire>
-      <p1 x="860" y="400"/>
-      <p2 x="960" y="400"/>
-    </wire>
-    <wire>
       <p1 x="380" y="400"/>
       <p2 x="500" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="400"/>
+      <p2 x="920" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="940" y="400"/>
+      <p2 x="960" y="400"/>
     </wire>
     <wire>
       <p1 x="460" y="80"/>
@@ -889,6 +921,10 @@
     <wire>
       <p1 x="680" y="160"/>
       <p2 x="720" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="420"/>
+      <p2 x="920" y="420"/>
     </wire>
     <wire>
       <p1 x="1020" y="680"/>
