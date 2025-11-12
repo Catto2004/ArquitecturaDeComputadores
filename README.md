@@ -37,7 +37,7 @@ Este repositorio contiene el desarrollo completo de un **procesador RISC-V de 32
 
 ## Estructura del Proyecto
 
-```
+``` bash
 ArquitecturaComputadores/
 │
 ├── 📁 TallerNo2Plexores/              # Multiplexores y demultiplexores básicos
