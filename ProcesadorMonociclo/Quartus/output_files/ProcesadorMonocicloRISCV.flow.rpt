@@ -1,5 +1,5 @@
 Flow report for ProcesadorMonocicloRISCV
-Thu Nov 20 15:34:39 2025
+Tue Nov 25 14:42:41 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -38,24 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Flow Summary                                                                 ;
-+-----------------------------+------------------------------------------------+
-; Flow Status                 ; Flow Failed - Thu Nov 20 15:34:39 2025         ;
-; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name               ; ProcesadorMonocicloRISCV                       ;
-; Top-level Entity Name       ; ProcesadorMonocicloRISCV                       ;
-; Family                      ; Cyclone V                                      ;
-; Device                      ; 5CSEMA5F31C6                                   ;
-; Timing Models               ; Final                                          ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++---------------------------------+------------------------------------------------+
+; Flow Status                     ; Successful - Tue Nov 25 14:42:41 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; ProcesadorMonocicloRISCV                       ;
+; Top-level Entity Name           ; ProcesadorMonociclo_32bits                     ;
+; Family                          ; Cyclone V                                      ;
+; Device                          ; 5CSEMA5F31C6                                   ;
+; Timing Models                   ; Final                                          ;
+; Logic utilization (in ALMs)     ; 79 / 32,070 ( < 1 % )                          ;
+; Total registers                 ; 39                                             ;
+; Total pins                      ; 98 / 457 ( 21 % )                              ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
++---------------------------------+------------------------------------------------+
 
 
 +----------------------------------------------+
@@ -63,30 +68,32 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+--------------------------+
 ; Option            ; Setting                  ;
 +-------------------+--------------------------+
-; Start date & time ; 11/20/2025 15:34:32      ;
+; Start date & time ; 11/25/2025 14:41:46      ;
 ; Main task         ; Compilation              ;
 ; Revision Name     ; ProcesadorMonocicloRISCV ;
 +-------------------+--------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                               ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 4681964154999.176367087201560          ; --            ; --          ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                         ;
++-------------------------------------+----------------------------------------+--------------------------+----------------------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value            ; Entity Name                ; Section Id                        ;
++-------------------------------------+----------------------------------------+--------------------------+----------------------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 4681964154999.176409970504968          ; --                       ; --                         ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                       ; --                         ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                       ; --                         ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                       ; --                         ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                       ; --                         ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --                       ; --                         ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)            ; <None>                   ; --                         ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --                       ; --                         ; eda_simulation                    ;
+; NUM_PARALLEL_PROCESSORS             ; 4                                      ; --                       ; --                         ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                       ; ProcesadorMonociclo_32bits ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                       ; ProcesadorMonociclo_32bits ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                       ; ProcesadorMonociclo_32bits ; Top                               ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                       ; --                         ; --                                ;
+; TOP_LEVEL_ENTITY                    ; ProcesadorMonociclo_32bits             ; ProcesadorMonocicloRISCV ; --                         ; --                                ;
++-------------------------------------+----------------------------------------+--------------------------+----------------------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -94,8 +101,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4782 MB             ; 00:00:18                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4841 MB             ; 00:00:15                           ;
+; Fitter               ; 00:00:32     ; 1.0                     ; 6582 MB             ; 00:00:56                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 5233 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 5358 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4746 MB             ; 00:00:01                           ;
+; Total                ; 00:00:51     ; --                      ; --                  ; 00:01:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -105,6 +116,10 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; Dash             ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Dash             ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Dash             ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Dash             ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Dash             ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -112,6 +127,10 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off ProcesadorMonocicloRISCV -c ProcesadorMonocicloRISCV
+quartus_fit --read_settings_files=off --write_settings_files=off ProcesadorMonocicloRISCV -c ProcesadorMonocicloRISCV
+quartus_asm --read_settings_files=off --write_settings_files=off ProcesadorMonocicloRISCV -c ProcesadorMonocicloRISCV
+quartus_sta ProcesadorMonocicloRISCV -c ProcesadorMonocicloRISCV
+quartus_eda --read_settings_files=off --write_settings_files=off ProcesadorMonocicloRISCV -c ProcesadorMonocicloRISCV
 
 
 

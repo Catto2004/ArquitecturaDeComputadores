@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProcesadorMonocicloRISCV
-Thu Nov 20 15:34:39 2025
+Tue Nov 25 14:41:52 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,7 +10,18 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "ALU_32bits:alu"
+ 13. Port Connectivity Checks: "PC_32bit:program_counter"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -34,109 +45,115 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                 ;
-+-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Nov 20 15:34:39 2025              ;
-; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name               ; ProcesadorMonocicloRISCV                       ;
-; Top-level Entity Name       ; ProcesadorMonocicloRISCV                       ;
-; Family                      ; Cyclone V                                      ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Nov 25 14:41:52 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; ProcesadorMonocicloRISCV                       ;
+; Top-level Entity Name           ; ProcesadorMonociclo_32bits                     ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 30                                             ;
+; Total pins                      ; 98                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                                         ;
-+---------------------------------------------------------------------------------+--------------------------+--------------------------+
-; Option                                                                          ; Setting                  ; Default Value            ;
-+---------------------------------------------------------------------------------+--------------------------+--------------------------+
-; Device                                                                          ; 5CSEMA5F31C6             ;                          ;
-; Top-level entity name                                                           ; ProcesadorMonocicloRISCV ; ProcesadorMonocicloRISCV ;
-; Family name                                                                     ; Cyclone V                ; Cyclone V                ;
-; Use smart compilation                                                           ; Off                      ; Off                      ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                       ; On                       ;
-; Enable compact report table                                                     ; Off                      ; Off                      ;
-; Restructure Multiplexers                                                        ; Auto                     ; Auto                     ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                      ; Off                      ;
-; Create Debugging Nodes for IP Cores                                             ; Off                      ; Off                      ;
-; Preserve fewer node names                                                       ; On                       ; On                       ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable                   ; Enable                   ;
-; Verilog Version                                                                 ; Verilog_2001             ; Verilog_2001             ;
-; VHDL Version                                                                    ; VHDL_1993                ; VHDL_1993                ;
-; State Machine Processing                                                        ; Auto                     ; Auto                     ;
-; Safe State Machine                                                              ; Off                      ; Off                      ;
-; Extract Verilog State Machines                                                  ; On                       ; On                       ;
-; Extract VHDL State Machines                                                     ; On                       ; On                       ;
-; Ignore Verilog initial constructs                                               ; Off                      ; Off                      ;
-; Iteration limit for constant Verilog loops                                      ; 5000                     ; 5000                     ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                      ; 250                      ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                       ; On                       ;
-; Infer RAMs from Raw Logic                                                       ; On                       ; On                       ;
-; Parallel Synthesis                                                              ; On                       ; On                       ;
-; DSP Block Balancing                                                             ; Auto                     ; Auto                     ;
-; NOT Gate Push-Back                                                              ; On                       ; On                       ;
-; Power-Up Don't Care                                                             ; On                       ; On                       ;
-; Remove Redundant Logic Cells                                                    ; Off                      ; Off                      ;
-; Remove Duplicate Registers                                                      ; On                       ; On                       ;
-; Ignore CARRY Buffers                                                            ; Off                      ; Off                      ;
-; Ignore CASCADE Buffers                                                          ; Off                      ; Off                      ;
-; Ignore GLOBAL Buffers                                                           ; Off                      ; Off                      ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                      ; Off                      ;
-; Ignore LCELL Buffers                                                            ; Off                      ; Off                      ;
-; Ignore SOFT Buffers                                                             ; On                       ; On                       ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                      ; Off                      ;
-; Optimization Technique                                                          ; Balanced                 ; Balanced                 ;
-; Carry Chain Length                                                              ; 70                       ; 70                       ;
-; Auto Carry Chains                                                               ; On                       ; On                       ;
-; Auto Open-Drain Pins                                                            ; On                       ; On                       ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                      ; Off                      ;
-; Auto ROM Replacement                                                            ; On                       ; On                       ;
-; Auto RAM Replacement                                                            ; On                       ; On                       ;
-; Auto DSP Block Replacement                                                      ; On                       ; On                       ;
-; Auto Shift Register Replacement                                                 ; Auto                     ; Auto                     ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto                     ; Auto                     ;
-; Auto Clock Enable Replacement                                                   ; On                       ; On                       ;
-; Strict RAM Replacement                                                          ; Off                      ; Off                      ;
-; Allow Synchronous Control Signals                                               ; On                       ; On                       ;
-; Force Use of Synchronous Clear Signals                                          ; Off                      ; Off                      ;
-; Auto Resource Sharing                                                           ; Off                      ; Off                      ;
-; Allow Any RAM Size For Recognition                                              ; Off                      ; Off                      ;
-; Allow Any ROM Size For Recognition                                              ; Off                      ; Off                      ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                      ; Off                      ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                       ; On                       ;
-; Ignore translate_off and synthesis_off directives                               ; Off                      ; Off                      ;
-; Timing-Driven Synthesis                                                         ; On                       ; On                       ;
-; Report Parameter Settings                                                       ; On                       ; On                       ;
-; Report Source Assignments                                                       ; On                       ; On                       ;
-; Report Connectivity Checks                                                      ; On                       ; On                       ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                      ; Off                      ;
-; Synchronization Register Chain Length                                           ; 3                        ; 3                        ;
-; Power Optimization During Synthesis                                             ; Normal compilation       ; Normal compilation       ;
-; HDL message level                                                               ; Level2                   ; Level2                   ;
-; Suppress Register Optimization Related Messages                                 ; Off                      ; Off                      ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000                     ; 5000                     ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                     ; 5000                     ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                      ; 100                      ;
-; Clock MUX Protection                                                            ; On                       ; On                       ;
-; Auto Gated Clock Conversion                                                     ; Off                      ; Off                      ;
-; Block Design Naming                                                             ; Auto                     ; Auto                     ;
-; SDC constraint protection                                                       ; Off                      ; Off                      ;
-; Synthesis Effort                                                                ; Auto                     ; Auto                     ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                       ; On                       ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                      ; Off                      ;
-; Analysis & Synthesis Message Level                                              ; Medium                   ; Medium                   ;
-; Disable Register Merging Across Hierarchies                                     ; Auto                     ; Auto                     ;
-; Resource Aware Inference For Block RAM                                          ; On                       ; On                       ;
-; Automatic Parallel Synthesis                                                    ; On                       ; On                       ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                      ; Off                      ;
-+---------------------------------------------------------------------------------+--------------------------+--------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                           ;
++---------------------------------------------------------------------------------+----------------------------+--------------------------+
+; Option                                                                          ; Setting                    ; Default Value            ;
++---------------------------------------------------------------------------------+----------------------------+--------------------------+
+; Device                                                                          ; 5CSEMA5F31C6               ;                          ;
+; Top-level entity name                                                           ; ProcesadorMonociclo_32bits ; ProcesadorMonocicloRISCV ;
+; Family name                                                                     ; Cyclone V                  ; Cyclone V                ;
+; Maximum processors allowed for parallel compilation                             ; 4                          ;                          ;
+; Use smart compilation                                                           ; Off                        ; Off                      ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                         ; On                       ;
+; Enable compact report table                                                     ; Off                        ; Off                      ;
+; Restructure Multiplexers                                                        ; Auto                       ; Auto                     ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                        ; Off                      ;
+; Create Debugging Nodes for IP Cores                                             ; Off                        ; Off                      ;
+; Preserve fewer node names                                                       ; On                         ; On                       ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                     ; Enable                   ;
+; Verilog Version                                                                 ; Verilog_2001               ; Verilog_2001             ;
+; VHDL Version                                                                    ; VHDL_1993                  ; VHDL_1993                ;
+; State Machine Processing                                                        ; Auto                       ; Auto                     ;
+; Safe State Machine                                                              ; Off                        ; Off                      ;
+; Extract Verilog State Machines                                                  ; On                         ; On                       ;
+; Extract VHDL State Machines                                                     ; On                         ; On                       ;
+; Ignore Verilog initial constructs                                               ; Off                        ; Off                      ;
+; Iteration limit for constant Verilog loops                                      ; 5000                       ; 5000                     ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                        ; 250                      ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                         ; On                       ;
+; Infer RAMs from Raw Logic                                                       ; On                         ; On                       ;
+; Parallel Synthesis                                                              ; On                         ; On                       ;
+; DSP Block Balancing                                                             ; Auto                       ; Auto                     ;
+; NOT Gate Push-Back                                                              ; On                         ; On                       ;
+; Power-Up Don't Care                                                             ; On                         ; On                       ;
+; Remove Redundant Logic Cells                                                    ; Off                        ; Off                      ;
+; Remove Duplicate Registers                                                      ; On                         ; On                       ;
+; Ignore CARRY Buffers                                                            ; Off                        ; Off                      ;
+; Ignore CASCADE Buffers                                                          ; Off                        ; Off                      ;
+; Ignore GLOBAL Buffers                                                           ; Off                        ; Off                      ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                        ; Off                      ;
+; Ignore LCELL Buffers                                                            ; Off                        ; Off                      ;
+; Ignore SOFT Buffers                                                             ; On                         ; On                       ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                        ; Off                      ;
+; Optimization Technique                                                          ; Balanced                   ; Balanced                 ;
+; Carry Chain Length                                                              ; 70                         ; 70                       ;
+; Auto Carry Chains                                                               ; On                         ; On                       ;
+; Auto Open-Drain Pins                                                            ; On                         ; On                       ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                        ; Off                      ;
+; Auto ROM Replacement                                                            ; On                         ; On                       ;
+; Auto RAM Replacement                                                            ; On                         ; On                       ;
+; Auto DSP Block Replacement                                                      ; On                         ; On                       ;
+; Auto Shift Register Replacement                                                 ; Auto                       ; Auto                     ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                       ; Auto                     ;
+; Auto Clock Enable Replacement                                                   ; On                         ; On                       ;
+; Strict RAM Replacement                                                          ; Off                        ; Off                      ;
+; Allow Synchronous Control Signals                                               ; On                         ; On                       ;
+; Force Use of Synchronous Clear Signals                                          ; Off                        ; Off                      ;
+; Auto Resource Sharing                                                           ; Off                        ; Off                      ;
+; Allow Any RAM Size For Recognition                                              ; Off                        ; Off                      ;
+; Allow Any ROM Size For Recognition                                              ; Off                        ; Off                      ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                        ; Off                      ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                         ; On                       ;
+; Ignore translate_off and synthesis_off directives                               ; Off                        ; Off                      ;
+; Timing-Driven Synthesis                                                         ; On                         ; On                       ;
+; Report Parameter Settings                                                       ; On                         ; On                       ;
+; Report Source Assignments                                                       ; On                         ; On                       ;
+; Report Connectivity Checks                                                      ; On                         ; On                       ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                        ; Off                      ;
+; Synchronization Register Chain Length                                           ; 3                          ; 3                        ;
+; Power Optimization During Synthesis                                             ; Normal compilation         ; Normal compilation       ;
+; HDL message level                                                               ; Level2                     ; Level2                   ;
+; Suppress Register Optimization Related Messages                                 ; Off                        ; Off                      ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                       ; 5000                     ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                       ; 5000                     ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                        ; 100                      ;
+; Clock MUX Protection                                                            ; On                         ; On                       ;
+; Auto Gated Clock Conversion                                                     ; Off                        ; Off                      ;
+; Block Design Naming                                                             ; Auto                       ; Auto                     ;
+; SDC constraint protection                                                       ; Off                        ; Off                      ;
+; Synthesis Effort                                                                ; Auto                       ; Auto                     ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                         ; On                       ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                        ; Off                      ;
+; Analysis & Synthesis Message Level                                              ; Medium                     ; Medium                   ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                       ; Auto                     ;
+; Resource Aware Inference For Block RAM                                          ; On                         ; On                       ;
+; Automatic Parallel Synthesis                                                    ; On                         ; On                       ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                        ; Off                      ;
++---------------------------------------------------------------------------------+----------------------------+--------------------------+
 
 
 +------------------------------------------+
@@ -148,11 +165,1239 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                  ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; ALU_32bits.v                     ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ALU_32bits.v                 ;         ;
+; PC_32bit.v                       ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PC_32bit.v                   ;         ;
+; RF24_32bit.v                     ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/RF24_32bit.v                 ;         ;
+; PM24_32bit.v                     ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v                 ;         ;
+; DataMemory_32bits.v              ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/DataMemory_32bits.v          ;         ;
+; Immediate_32bits.v               ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Immediate_32bits.v           ;         ;
+; Branch_32bit.v                   ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Branch_32bit.v               ;         ;
+; CU_32bits.v                      ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/CU_32bits.v                  ;         ;
+; ProcesadorMonociclo_32bits.v     ; yes             ; User Verilog HDL File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                              ;
++---------------------------------------------+--------------------------------------------+
+; Resource                                    ; Usage                                      ;
++---------------------------------------------+--------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 68                                         ;
+;                                             ;                                            ;
+; Combinational ALUT usage for logic          ; 134                                        ;
+;     -- 7 input functions                    ; 0                                          ;
+;     -- 6 input functions                    ; 2                                          ;
+;     -- 5 input functions                    ; 5                                          ;
+;     -- 4 input functions                    ; 2                                          ;
+;     -- <=3 input functions                  ; 125                                        ;
+;                                             ;                                            ;
+; Dedicated logic registers                   ; 30                                         ;
+;                                             ;                                            ;
+; I/O pins                                    ; 98                                         ;
+;                                             ;                                            ;
+; Total DSP Blocks                            ; 0                                          ;
+;                                             ;                                            ;
+; Maximum fan-out node                        ; PM24_32bit:program_memory|program_memory~1 ;
+; Maximum fan-out                             ; 74                                         ;
+; Total fan-out                               ; 685                                        ;
+; Average fan-out                             ; 1.90                                       ;
++---------------------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name                ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------------------+--------------+
+; |ProcesadorMonociclo_32bits    ; 134 (60)            ; 30 (0)                    ; 0                 ; 0          ; 98   ; 0            ; |ProcesadorMonociclo_32bits                           ; ProcesadorMonociclo_32bits ; work         ;
+;    |ALU_32bits:alu|            ; 65 (65)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits|ALU_32bits:alu            ; ALU_32bits                 ; work         ;
+;    |Immediate_32bits:imm_gen|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits|Immediate_32bits:imm_gen  ; Immediate_32bits           ; work         ;
+;    |PC_32bit:program_counter|  ; 0 (0)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits|PC_32bit:program_counter  ; PC_32bit                   ; work         ;
+;    |PM24_32bit:program_memory| ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits|PM24_32bit:program_memory ; PM24_32bit                 ; work         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------------+----------------------------------------+
+; Register name                               ; Reason for Removal                     ;
++---------------------------------------------+----------------------------------------+
+; PC_32bit:program_counter|output_pc[0,1]     ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~96   ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~97   ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~98   ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~99   ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~100  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~101  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~102  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~103  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~104  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~105  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~106  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~107  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~108  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~109  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~110  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~111  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~112  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~113  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~114  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~115  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~116  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~117  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~118  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~119  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~120  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~121  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~122  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~123  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~124  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~125  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~126  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~127  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~128  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~129  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~130  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~131  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~132  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~133  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~134  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~135  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~136  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~137  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~138  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~139  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~140  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~141  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~142  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~143  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~144  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~145  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~146  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~147  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~148  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~149  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~150  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~151  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~152  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~153  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~154  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~155  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~156  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~157  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~158  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~159  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~160  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~161  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~162  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~163  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~164  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~165  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~166  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~167  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~168  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~169  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~170  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~171  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~172  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~173  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~174  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~175  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~176  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~177  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~178  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~179  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~180  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~181  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~182  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~183  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~184  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~185  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~186  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~187  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~188  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~189  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~190  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~191  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~192  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~193  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~194  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~195  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~196  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~197  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~198  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~199  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~200  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~201  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~202  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~203  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~204  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~205  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~206  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~207  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~208  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~209  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~210  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~211  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~212  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~213  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~214  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~215  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~216  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~217  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~218  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~219  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~220  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~221  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~222  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~223  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~224  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~225  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~226  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~227  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~228  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~229  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~230  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~231  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~232  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~233  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~234  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~235  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~236  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~237  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~238  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~239  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~240  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~241  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~242  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~243  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~244  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~245  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~246  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~247  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~248  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~249  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~250  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~251  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~252  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~253  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~254  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~255  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~256  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~257  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~258  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~259  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~260  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~261  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~262  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~263  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~264  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~265  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~266  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~267  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~268  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~269  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~270  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~271  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~272  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~273  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~274  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~275  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~276  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~277  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~278  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~279  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~280  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~281  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~282  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~283  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~284  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~285  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~286  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~287  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~288  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~289  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~290  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~291  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~292  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~293  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~294  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~295  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~296  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~297  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~298  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~299  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~300  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~301  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~302  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~303  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~304  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~305  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~306  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~307  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~308  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~309  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~310  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~311  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~312  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~313  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~314  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~315  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~316  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~317  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~318  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~319  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~320  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~321  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~322  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~323  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~324  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~325  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~326  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~327  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~328  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~329  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~330  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~331  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~332  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~333  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~334  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~335  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~336  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~337  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~338  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~339  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~340  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~341  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~342  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~343  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~344  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~345  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~346  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~347  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~348  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~349  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~350  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~351  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~352  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~353  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~354  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~355  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~356  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~357  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~358  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~359  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~360  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~361  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~362  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~363  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~364  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~365  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~366  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~367  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~368  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~369  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~370  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~371  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~372  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~373  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~374  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~375  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~376  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~377  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~378  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~379  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~380  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~381  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~382  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~383  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~384  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~385  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~386  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~387  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~388  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~389  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~390  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~391  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~392  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~393  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~394  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~395  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~396  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~397  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~398  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~399  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~400  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~401  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~402  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~403  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~404  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~405  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~406  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~407  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~408  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~409  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~410  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~411  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~412  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~413  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~414  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~415  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~416  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~417  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~418  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~419  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~420  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~421  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~422  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~423  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~424  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~425  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~426  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~427  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~428  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~429  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~430  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~431  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~432  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~433  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~434  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~435  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~436  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~437  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~438  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~439  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~440  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~441  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~442  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~443  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~444  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~445  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~446  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~447  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~448  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~449  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~450  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~451  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~452  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~453  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~454  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~455  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~456  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~457  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~458  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~459  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~460  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~461  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~462  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~463  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~464  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~465  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~466  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~467  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~468  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~469  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~470  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~471  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~472  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~473  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~474  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~475  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~476  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~477  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~478  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~479  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~480  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~481  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~482  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~483  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~484  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~485  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~486  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~487  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~488  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~489  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~490  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~491  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~492  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~493  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~494  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~495  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~496  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~497  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~498  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~499  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~500  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~501  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~502  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~503  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~504  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~505  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~506  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~507  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~508  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~509  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~510  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~511  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~512  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~513  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~514  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~515  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~516  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~517  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~518  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~519  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~520  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~521  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~522  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~523  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~524  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~525  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~526  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~527  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~528  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~529  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~530  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~531  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~532  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~533  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~534  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~535  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~536  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~537  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~538  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~539  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~540  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~541  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~542  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~543  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~544  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~545  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~546  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~547  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~548  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~549  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~550  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~551  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~552  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~553  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~554  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~555  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~556  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~557  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~558  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~559  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~560  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~561  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~562  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~563  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~564  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~565  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~566  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~567  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~568  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~569  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~570  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~571  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~572  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~573  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~574  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~575  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~576  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~577  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~578  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~579  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~580  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~581  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~582  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~583  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~584  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~585  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~586  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~587  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~588  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~589  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~590  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~591  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~592  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~593  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~594  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~595  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~596  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~597  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~598  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~599  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~600  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~601  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~602  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~603  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~604  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~605  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~606  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~607  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~608  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~609  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~610  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~611  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~612  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~613  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~614  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~615  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~616  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~617  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~618  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~619  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~620  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~621  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~622  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~623  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~624  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~625  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~626  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~627  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~628  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~629  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~630  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~631  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~632  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~633  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~634  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~635  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~636  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~637  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~638  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~639  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~640  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~641  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~642  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~643  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~644  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~645  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~646  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~647  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~648  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~649  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~650  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~651  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~652  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~653  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~654  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~655  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~656  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~657  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~658  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~659  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~660  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~661  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~662  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~663  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~664  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~665  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~666  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~667  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~668  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~669  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~670  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~671  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~672  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~673  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~674  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~675  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~676  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~677  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~678  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~679  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~680  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~681  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~682  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~683  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~684  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~685  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~686  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~687  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~688  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~689  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~690  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~691  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~692  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~693  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~694  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~695  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~696  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~697  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~698  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~699  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~700  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~701  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~702  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~703  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~704  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~705  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~706  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~707  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~708  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~709  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~710  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~711  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~712  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~713  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~714  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~715  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~716  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~717  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~718  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~719  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~720  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~721  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~722  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~723  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~724  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~725  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~726  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~727  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~728  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~729  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~730  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~731  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~732  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~733  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~734  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~735  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~736  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~737  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~738  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~739  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~740  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~741  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~742  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~743  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~744  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~745  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~746  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~747  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~748  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~749  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~750  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~751  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~752  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~753  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~754  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~755  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~756  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~757  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~758  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~759  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~760  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~761  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~762  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~763  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~764  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~765  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~766  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~767  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~768  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~769  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~770  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~771  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~772  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~773  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~774  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~775  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~776  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~777  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~778  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~779  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~780  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~781  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~782  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~783  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~784  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~785  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~786  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~787  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~788  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~789  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~790  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~791  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~792  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~793  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~794  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~795  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~796  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~797  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~798  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~799  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~800  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~801  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~802  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~803  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~804  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~805  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~806  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~807  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~808  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~809  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~810  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~811  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~812  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~813  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~814  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~815  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~816  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~817  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~818  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~819  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~820  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~821  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~822  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~823  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~824  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~825  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~826  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~827  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~828  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~829  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~830  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~831  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~832  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~833  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~834  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~835  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~836  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~837  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~838  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~839  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~840  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~841  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~842  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~843  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~844  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~845  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~846  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~847  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~848  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~849  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~850  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~851  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~852  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~853  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~854  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~855  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~856  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~857  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~858  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~859  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~860  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~861  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~862  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~863  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~864  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~865  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~866  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~867  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~868  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~869  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~870  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~871  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~872  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~873  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~874  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~875  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~876  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~877  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~878  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~879  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~880  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~881  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~882  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~883  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~884  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~885  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~886  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~887  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~888  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~889  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~890  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~891  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~892  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~893  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~894  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~895  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~896  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~897  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~898  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~899  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~900  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~901  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~902  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~903  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~904  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~905  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~906  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~907  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~908  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~909  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~910  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~911  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~912  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~913  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~914  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~915  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~916  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~917  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~918  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~919  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~920  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~921  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~922  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~923  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~924  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~925  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~926  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~927  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~928  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~929  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~930  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~931  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~932  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~933  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~934  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~935  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~936  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~937  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~938  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~939  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~940  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~941  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~942  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~943  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~944  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~945  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~946  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~947  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~948  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~949  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~950  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~951  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~952  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~953  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~954  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~955  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~956  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~957  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~958  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~959  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~960  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~961  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~962  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~963  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~964  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~965  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~966  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~967  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~968  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~969  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~970  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~971  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~972  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~973  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~974  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~975  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~976  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~977  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~978  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~979  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~980  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~981  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~982  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~983  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~984  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~985  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~986  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~987  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~988  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~989  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~990  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~991  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~992  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~993  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~994  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~995  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~996  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~997  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~998  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~999  ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1000 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1001 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1002 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1003 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1004 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1005 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1006 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1007 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1008 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1009 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1010 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1011 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1012 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1013 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1014 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1015 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1016 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1017 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1018 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1019 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1020 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1021 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1022 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~1023 ; Lost fanout                            ;
+; RF24_32bit:register_file|register_file~64   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~32   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~65   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~33   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~66   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~34   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~67   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~35   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~68   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~36   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~69   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~37   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~70   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~38   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~71   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~39   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~72   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~40   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~73   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~41   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~74   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~42   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~75   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~43   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~76   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~44   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~77   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~45   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~78   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~46   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~79   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~47   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~80   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~48   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~81   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~49   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~82   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~50   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~83   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~51   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~84   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~52   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~85   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~53   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~86   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~54   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~87   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~55   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~88   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~56   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~89   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~57   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~90   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~58   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~91   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~59   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~92   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~60   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~93   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~61   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~94   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~62   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~95   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~63   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~4    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~0    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~1    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~2    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~3    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~25   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~27   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~26   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~28   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~29   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~31   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~30   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~17   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~19   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~18   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~20   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~21   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~23   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~22   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~24   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~9    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~11   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~10   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~12   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~13   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~15   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~14   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~16   ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~5    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~7    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~6    ; Stuck at GND due to stuck port data_in ;
+; RF24_32bit:register_file|register_file~8    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1026    ;                                        ;
++---------------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
++-------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name                             ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++-------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; RF24_32bit:register_file|register_file~64 ; Stuck at GND              ; RF24_32bit:register_file|register_file~4, RF24_32bit:register_file|register_file~0, ;
+;                                           ; due to stuck port data_in ; RF24_32bit:register_file|register_file~2,                                           ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~25,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~27,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~26,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~17,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~18,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~20,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~23,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~24,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~11,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~10,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~12,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~13,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~15,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~16,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~5, RF24_32bit:register_file|register_file~8  ;
+; RF24_32bit:register_file|register_file~32 ; Stuck at GND              ; RF24_32bit:register_file|register_file~1, RF24_32bit:register_file|register_file~3, ;
+;                                           ; due to stuck port data_in ; RF24_32bit:register_file|register_file~19,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~21,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~22,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~9,                                           ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~14,                                          ;
+;                                           ;                           ; RF24_32bit:register_file|register_file~7                                            ;
+; RF24_32bit:register_file|register_file~65 ; Stuck at GND              ; RF24_32bit:register_file|register_file~6                                            ;
+;                                           ; due to stuck port data_in ;                                                                                     ;
+; RF24_32bit:register_file|register_file~60 ; Stuck at GND              ; RF24_32bit:register_file|register_file~28                                           ;
+;                                           ; due to stuck port data_in ;                                                                                     ;
+; RF24_32bit:register_file|register_file~61 ; Stuck at GND              ; RF24_32bit:register_file|register_file~29                                           ;
+;                                           ; due to stuck port data_in ;                                                                                     ;
+; RF24_32bit:register_file|register_file~62 ; Stuck at GND              ; RF24_32bit:register_file|register_file~30                                           ;
+;                                           ; due to stuck port data_in ;                                                                                     ;
+; RF24_32bit:register_file|register_file~63 ; Stuck at GND              ; RF24_32bit:register_file|register_file~31                                           ;
+;                                           ; due to stuck port data_in ;                                                                                     ;
++-------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|ShiftRight0 ;
+; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|ShiftRight1 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|ShiftRight0 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|ShiftRight1 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|ShiftLeft0  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|ShiftLeft0  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|ShiftLeft0  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits|alu_control[0]             ;
+; 15:1               ; 8 bits    ; 80 LEs        ; 72 LEs               ; 8 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|Mux10       ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 40 LEs               ; 5 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|Mux27       ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 24 LEs               ; 3 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|Mux19       ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 33 LEs               ; 3 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|Mux3        ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|Mux6        ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 30 LEs               ; 3 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|Mux28       ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 18 LEs               ; 2 LEs                  ; No         ; |ProcesadorMonociclo_32bits|ALU_32bits:alu|Mux21       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU_32bits:alu"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "PC_32bit:program_counter" ;
++--------------+-------+----------+--------------------+
+; Port         ; Type  ; Severity ; Details            ;
++--------------+-------+----------+--------------------+
+; write_enable ; Input ; Info     ; Stuck at VCC       ;
++--------------+-------+----------+--------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 30                          ;
+;     CLR SLD           ; 30                          ;
+; arriav_lcell_comb     ; 137                         ;
+;     arith             ; 93                          ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 57                          ;
+;         3 data inputs ; 2                           ;
+;         5 data inputs ; 4                           ;
+;     normal            ; 44                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 34                          ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 1                           ;
+;         6 data inputs ; 2                           ;
+; boundary_port         ; 98                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.20                        ;
+; Average LUT depth     ; 4.83                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,17 +1406,73 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Nov 20 15:34:32 2025
+    Info: Processing started: Tue Nov 25 14:41:45 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProcesadorMonocicloRISCV -c ProcesadorMonocicloRISCV
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10759): Verilog HDL error at Prueba.v(6): object c declared in a list of port declarations cannot be redeclared within the module body File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Prueba.v Line: 6
-Error (10112): Ignored design unit "Prueba" at Prueba.v(1) due to previous errors File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Prueba.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file prueba.v
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4782 megabytes
-    Error: Processing ended: Thu Nov 20 15:34:39 2025
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:18
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 1 design units, including 1 entities, in source file alu_32bits.v
+    Info (12023): Found entity 1: ALU_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ALU_32bits.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file pc_32bit.v
+    Info (12023): Found entity 1: PC_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PC_32bit.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file rf24_32bit.v
+    Info (12023): Found entity 1: RF24_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/RF24_32bit.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file pm24_32bit.v
+    Info (12023): Found entity 1: PM24_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file datamemory_32bits.v
+    Info (12023): Found entity 1: DataMemory_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/DataMemory_32bits.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file immediate_32bits.v
+    Info (12023): Found entity 1: Immediate_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Immediate_32bits.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file branch_32bit.v
+    Info (12023): Found entity 1: Branch_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Branch_32bit.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file cu_32bits.v
+    Info (12023): Found entity 1: CU_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/CU_32bits.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file procesadormonociclo_32bits.v
+    Info (12023): Found entity 1: ProcesadorMonociclo_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 6
+Info (12127): Elaborating entity "ProcesadorMonociclo_32bits" for the top level hierarchy
+Info (12128): Elaborating entity "PC_32bit" for hierarchy "PC_32bit:program_counter" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 90
+Info (12128): Elaborating entity "PM24_32bit" for hierarchy "PM24_32bit:program_memory" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 96
+Warning (10030): Net "program_memory.data_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
+Warning (10030): Net "program_memory.waddr_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
+Warning (10030): Net "program_memory.we_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
+Info (12128): Elaborating entity "Immediate_32bits" for hierarchy "Immediate_32bits:imm_gen" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 102
+Info (12128): Elaborating entity "CU_32bits" for hierarchy "CU_32bits:control_unit" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 118
+Info (12128): Elaborating entity "RF24_32bit" for hierarchy "RF24_32bit:register_file" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 130
+Info (12128): Elaborating entity "ALU_32bits" for hierarchy "ALU_32bits:alu" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 154
+Info (12128): Elaborating entity "Branch_32bit" for hierarchy "Branch_32bit:branch_unit" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 163
+Info (12128): Elaborating entity "DataMemory_32bits" for hierarchy "DataMemory_32bits:data_memory" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 173
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "DataMemory_32bits:data_memory|data_memory" is uninferred due to asynchronous read logic File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/DataMemory_32bits.v Line: 16
+    Info (276007): RAM logic "RF24_32bit:register_file|register_file" is uninferred due to asynchronous read logic File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/RF24_32bit.v Line: 16
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "pc_out[0]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 9
+    Warning (13410): Pin "pc_out[1]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 9
+    Warning (13410): Pin "instruction_out[0]" is stuck at VCC File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[1]" is stuck at VCC File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[2]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[3]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[8]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[12]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[13]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[14]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[16]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[17]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[18]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[19]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[20]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[22]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[23]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+    Warning (13410): Pin "instruction_out[24]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits.v Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 928 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 232 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 96 output pins
+    Info (21061): Implemented 134 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Tue Nov 25 14:41:52 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
 
 
