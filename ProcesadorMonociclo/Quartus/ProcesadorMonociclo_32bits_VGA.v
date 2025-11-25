@@ -1,0 +1,282 @@
+// Top-level: Procesador Monociclo RISC-V con salida VGA
+// Integra procesador + visualización de memoria en pantalla VGA
+// Target: DE1-SoC (Cyclone V) con VGA 1280x800
+// Autor: Sistema de Arquitectura de Computadores
+// Fecha: Noviembre 2025
+
+module ProcesadorMonociclo_32bits_VGA (
+    // Entradas del sistema
+    input         CLOCK_50,        // Clock principal 50 MHz (PIN_AF14)
+    input         reset,           // Reset asíncrono (KEY[0] - PIN_AA14)
+    
+    // Salidas de depuración (LEDs)
+    output [9:0]  LEDR,            // LEDs rojos - PC[9:0]
+    
+    // Salidas VGA
+    output [7:0]  VGA_R,           // VGA Red
+    output [7:0]  VGA_G,           // VGA Green
+    output [7:0]  VGA_B,           // VGA Blue
+    output        VGA_HS,          // VGA H-Sync
+    output        VGA_VS,          // VGA V-Sync
+    output        VGA_CLK,         // VGA Clock
+    output        VGA_BLANK_N,     // VGA Blank
+    output        VGA_SYNC_N       // VGA Sync
+);
+
+    // ========================================
+    // Señales del Procesador
+    // ========================================
+    wire [31:0] pc_current;
+    wire [31:0] instruction;
+    wire [31:0] immediate;
+    wire [6:0]  opcode;
+    wire [2:0]  funct3;
+    wire [6:0]  funct7;
+    wire [4:0]  rs1, rs2, rd;
+    wire        reg_write, mem_write, mem_read;
+    wire        alu_src, mem_to_reg;
+    wire [3:0]  alu_op;
+    wire        branch_taken;
+    wire [31:0] read_data1, read_data2;
+    wire [31:0] alu_input2, alu_result;
+    wire [31:0] mem_read_data, write_back_data;
+    wire [31:0] pc_next, pc_plus_4, pc_branch;
+    
+    // ========================================
+    // Señales VGA
+    // ========================================
+    wire        vga_clk;           // Clock VGA (83.5 MHz)
+    wire [10:0] vga_x;             // Coordenada X
+    wire [9:0]  vga_y;             // Coordenada Y
+    wire        vga_video_on;      // Video activo
+    wire [9:0]  vga_mem_addr;      // Dirección de memoria para VGA
+    wire [31:0] vga_mem_data;      // Dato leído de memoria para VGA
+    
+    // ========================================
+    // Asignaciones de salida
+    // ========================================
+    assign LEDR = pc_current[9:0];
+    assign VGA_BLANK_N = vga_video_on;
+    assign VGA_SYNC_N = 1'b0;  // Normalmente 0 para VGA estándar
+    
+    // ========================================
+    // MÓDULO: Program Counter (PC)
+    // ========================================
+    PC_32bit program_counter (
+        .clock(CLOCK_50),
+        .reset(reset),
+        .pc_in(pc_next),
+        .pc_out(pc_current)
+    );
+    
+    // ========================================
+    // MÓDULO: Memoria de Programa
+    // ========================================
+    PM24_32bit program_memory (
+        .address(pc_current),
+        .data_out(instruction)
+    );
+    
+    // ========================================
+    // Decodificador de Instrucción
+    // ========================================
+    assign opcode = instruction[6:0];
+    assign funct3 = instruction[14:12];
+    assign funct7 = instruction[31:25];
+    assign rs1    = instruction[19:15];
+    assign rs2    = instruction[24:20];
+    assign rd     = instruction[11:7];
+    
+    // ========================================
+    // MÓDULO: Generador de Inmediatos
+    // ========================================
+    Immediate_32bits imm_gen (
+        .instruction(instruction),
+        .immediate(immediate)
+    );
+    
+    // ========================================
+    // MÓDULO: Unidad de Control
+    // ========================================
+    CU_32bits control_unit (
+        .opcode(opcode),
+        .funct3(funct3),
+        .funct7(funct7),
+        .reg_write(reg_write),
+        .mem_write(mem_write),
+        .mem_read(mem_read),
+        .alu_src(alu_src),
+        .mem_to_reg(mem_to_reg),
+        .alu_op(alu_op)
+    );
+    
+    // ========================================
+    // MÓDULO: Banco de Registros
+    // ========================================
+    RF24_32bit register_file (
+        .clock(CLOCK_50),
+        .reg_write(reg_write),
+        .rs1(rs1),
+        .rs2(rs2),
+        .rd(rd),
+        .write_data(write_back_data),
+        .read_data1(read_data1),
+        .read_data2(read_data2)
+    );
+    
+    // ========================================
+    // MUX: Segundo operando de la ALU
+    // ========================================
+    assign alu_input2 = alu_src ? immediate : read_data2;
+    
+    // ========================================
+    // MÓDULO: ALU
+    // ========================================
+    ALU_32bits alu (
+        .a(read_data1),
+        .b(alu_input2),
+        .alu_op(alu_op),
+        .result(alu_result),
+        .zero()  // No usado en esta versión
+    );
+    
+    // ========================================
+    // MÓDULO: Unidad de Branch
+    // ========================================
+    Branch_32bit branch_unit (
+        .opcode(opcode),
+        .funct3(funct3),
+        .operand_a(read_data1),
+        .operand_b(read_data2),
+        .branch_taken(branch_taken)
+    );
+    
+    // ========================================
+    // MÓDULO: Memoria de Datos (con puerto VGA)
+    // ========================================
+    DataMemory_32bits_VGA data_memory (
+        .clock(CLOCK_50),
+        .mem_write(mem_write),
+        .mem_read(mem_read),
+        .address(alu_result),
+        .write_data(read_data2),
+        .read_data(mem_read_data),
+        // Puerto VGA
+        .vga_address({22'd0, vga_mem_addr}),
+        .vga_data(vga_mem_data)
+    );
+    
+    // ========================================
+    // MUX: Write Back
+    // ========================================
+    assign write_back_data = mem_to_reg ? mem_read_data : alu_result;
+    
+    // ========================================
+    // Lógica de actualización del PC
+    // ========================================
+    assign pc_plus_4 = pc_current + 32'd4;
+    assign pc_branch = pc_current + immediate;
+    assign pc_next   = branch_taken ? pc_branch : pc_plus_4;
+    
+    // ========================================
+    // MÓDULO: Generador de Clock VGA
+    // ========================================
+    clock1280x800 vga_clock_gen (
+        .clock50(CLOCK_50),
+        .reset(reset),
+        .vgaclk(vga_clk)
+    );
+    
+    assign VGA_CLK = vga_clk;
+    
+    // ========================================
+    // MÓDULO: Controlador VGA
+    // ========================================
+    vga_controller_1280x800 vga_ctrl (
+        .clk(vga_clk),
+        .reset(reset),
+        .video_on(vga_video_on),
+        .hsync(VGA_HS),
+        .vsync(VGA_VS),
+        .hcount(vga_x),
+        .vcount(vga_y)
+    );
+    
+    // ========================================
+    // MÓDULO: Visualizador de Memoria VGA
+    // ========================================
+    VGA_Memory_Display vga_display (
+        .clk_vga(vga_clk),
+        .clk_sys(CLOCK_50),
+        .reset(reset),
+        .x(vga_x),
+        .y(vga_y),
+        .video_on(vga_video_on),
+        .mem_data(vga_mem_data),
+        .mem_addr(vga_mem_addr),
+        .vga_red(VGA_R),
+        .vga_green(VGA_G),
+        .vga_blue(VGA_B)
+    );
+
+endmodule
+
+
+// ========================================
+// Memoria de Datos con puerto VGA dual
+// ========================================
+module DataMemory_32bits_VGA (
+    input             clock,
+    input             mem_write,
+    input             mem_read,
+    input      [31:0] address,
+    input      [31:0] write_data,
+    output reg [31:0] read_data,
+    // Puerto VGA (solo lectura)
+    input      [31:0] vga_address,
+    output reg [31:0] vga_data
+);
+
+    reg [31:0] data_memory [0:1023];
+    
+    wire [9:0] effective_addr = address[11:2];
+    wire [9:0] vga_effective_addr = vga_address[11:2];
+    
+    integer i;
+    initial begin
+        for (i = 0; i < 1024; i = i + 1) begin
+            data_memory[i] = 32'd0;
+        end
+        // Datos de ejemplo para visualización
+        data_memory[0]  = 32'hDEADBEEF;
+        data_memory[1]  = 32'h12345678;
+        data_memory[2]  = 32'hABCDEF00;
+        data_memory[3]  = 32'hCAFEBABE;
+        data_memory[4]  = 32'h00112233;
+        data_memory[5]  = 32'h44556677;
+        data_memory[6]  = 32'h8899AABB;
+        data_memory[7]  = 32'hCCDDEEFF;
+    end
+    
+    // Puerto procesador - escritura síncrona
+    always @(posedge clock) begin
+        if (mem_write) begin
+            data_memory[effective_addr] <= write_data;
+        end
+    end
+    
+    // Puerto procesador - lectura
+    always @(*) begin
+        if (mem_read) begin
+            read_data = data_memory[effective_addr];
+        end else begin
+            read_data = 32'd0;
+        end
+    end
+    
+    // Puerto VGA - solo lectura asíncrona
+    always @(*) begin
+        vga_data = data_memory[vga_effective_addr];
+    end
+
+endmodule

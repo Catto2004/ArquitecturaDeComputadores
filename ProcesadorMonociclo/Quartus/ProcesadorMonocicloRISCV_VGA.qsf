@@ -1,0 +1,155 @@
+# Quartus Project File para Procesador Monociclo con VGA
+# Target: DE1-SoC (Cyclone V - 5CSEMA5F31C6)
+# Procesador RISC-V + Visualización de Memoria en VGA 1280x800
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY ProcesadorMonociclo_32bits_VGA
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:00:00 NOVEMBER 25, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
+
+# Archivos Verilog del Procesador
+set_global_assignment -name VERILOG_FILE ProcesadorMonociclo_32bits_VGA.v
+set_global_assignment -name VERILOG_FILE VGA_Memory_Display.v
+set_global_assignment -name VERILOG_FILE VGA_Controller_1280x800.v
+set_global_assignment -name VERILOG_FILE ALU_32bits.v
+set_global_assignment -name VERILOG_FILE PC_32bit.v
+set_global_assignment -name VERILOG_FILE RF24_32bit.v
+set_global_assignment -name VERILOG_FILE PM24_32bit.v
+set_global_assignment -name VERILOG_FILE Immediate_32bits.v
+set_global_assignment -name VERILOG_FILE Branch_32bit.v
+set_global_assignment -name VERILOG_FILE CU_32bits.v
+
+# Archivo Qsys para PLL VGA
+set_global_assignment -name QSYS_FILE ../CodigoVGA/vgaClock.qsys
+
+# Archivo de restricciones de timing
+set_global_assignment -name SDC_FILE ProcesadorMonocicloRISCV_VGA.sdc
+
+# ========================================
+# PINES DEL SISTEMA
+# ========================================
+
+# Clock 50 MHz
+set_location_assignment PIN_AF14 -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+
+# Reset (KEY[0])
+set_location_assignment PIN_AA14 -to reset
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to reset
+
+# ========================================
+# LEDS ROJOS (LEDR[9:0]) - PC Debug
+# ========================================
+set_location_assignment PIN_V16 -to LEDR[0]
+set_location_assignment PIN_W16 -to LEDR[1]
+set_location_assignment PIN_V17 -to LEDR[2]
+set_location_assignment PIN_V18 -to LEDR[3]
+set_location_assignment PIN_W17 -to LEDR[4]
+set_location_assignment PIN_W19 -to LEDR[5]
+set_location_assignment PIN_Y19 -to LEDR[6]
+set_location_assignment PIN_W20 -to LEDR[7]
+set_location_assignment PIN_W21 -to LEDR[8]
+set_location_assignment PIN_Y21 -to LEDR[9]
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9]
+
+# ========================================
+# PINES VGA - DE1-SoC
+# ========================================
+
+# VGA Red [7:0]
+set_location_assignment PIN_AA9 -to VGA_R[0]
+set_location_assignment PIN_V9 -to VGA_R[1]
+set_location_assignment PIN_W10 -to VGA_R[2]
+set_location_assignment PIN_Y10 -to VGA_R[3]
+set_location_assignment PIN_W9 -to VGA_R[4]
+set_location_assignment PIN_AB10 -to VGA_R[5]
+set_location_assignment PIN_AA10 -to VGA_R[6]
+set_location_assignment PIN_AB11 -to VGA_R[7]
+
+# VGA Green [7:0]
+set_location_assignment PIN_V10 -to VGA_G[0]
+set_location_assignment PIN_Y11 -to VGA_G[1]
+set_location_assignment PIN_AB12 -to VGA_G[2]
+set_location_assignment PIN_W11 -to VGA_G[3]
+set_location_assignment PIN_V11 -to VGA_G[4]
+set_location_assignment PIN_AA12 -to VGA_G[5]
+set_location_assignment PIN_AB13 -to VGA_G[6]
+set_location_assignment PIN_AA13 -to VGA_G[7]
+
+# VGA Blue [7:0]
+set_location_assignment PIN_Y12 -to VGA_B[0]
+set_location_assignment PIN_W12 -to VGA_B[1]
+set_location_assignment PIN_AB14 -to VGA_B[2]
+set_location_assignment PIN_W13 -to VGA_B[3]
+set_location_assignment PIN_AA14 -to VGA_B[4]
+set_location_assignment PIN_Y13 -to VGA_B[5]
+set_location_assignment PIN_AB15 -to VGA_B[6]
+set_location_assignment PIN_AA15 -to VGA_B[7]
+
+# VGA Sync Signals
+set_location_assignment PIN_AE12 -to VGA_CLK
+set_location_assignment PIN_AD12 -to VGA_BLANK_N
+set_location_assignment PIN_AC12 -to VGA_HS
+set_location_assignment PIN_AG12 -to VGA_SYNC_N
+set_location_assignment PIN_AE11 -to VGA_VS
+
+# VGA IO Standard (3.3V LVTTL)
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7]
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7]
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7]
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
+
+# ========================================
+# CONFIGURACIONES ADICIONALES
+# ========================================
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
