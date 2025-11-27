@@ -49,8 +49,12 @@ module ProcesadorMonociclo_32bits_VGA (
     wire [10:0] vga_x;             // Coordenada X
     wire [9:0]  vga_y;             // Coordenada Y
     wire        vga_video_on;      // Video activo
-    wire [9:0]  vga_mem_addr;      // Dirección de memoria para VGA
-    wire [31:0] vga_mem_data;      // Dato leído de memoria para VGA
+    // wire [9:0]  vga_mem_addr;      // Dirección de memoria para VGA (no usado en test pattern)
+    // wire [31:0] vga_mem_data;      // Dato leído de memoria para VGA (no usado en test pattern)
+    
+    // Señales para leer registros desde VGA
+    wire [4:0]  vga_reg_address;
+    wire [31:0] vga_reg_data;
     
     // ========================================
     // Asignaciones de salida
@@ -65,8 +69,9 @@ module ProcesadorMonociclo_32bits_VGA (
     PC_32bit program_counter (
         .clock(CLOCK_50),
         .reset(reset),
-        .pc_in(pc_next),
-        .pc_out(pc_current)
+        .write_enable(1'b1),      // Siempre habilitado
+        .input_pc(pc_next),
+        .output_pc(pc_current)
     );
     
     // ========================================
@@ -74,7 +79,7 @@ module ProcesadorMonociclo_32bits_VGA (
     // ========================================
     PM24_32bit program_memory (
         .address(pc_current),
-        .data_out(instruction)
+        .instruction(instruction)
     );
     
     // ========================================
@@ -115,13 +120,16 @@ module ProcesadorMonociclo_32bits_VGA (
     // ========================================
     RF24_32bit register_file (
         .clock(CLOCK_50),
-        .reg_write(reg_write),
-        .rs1(rs1),
-        .rs2(rs2),
-        .rd(rd),
-        .write_data(write_back_data),
-        .read_data1(read_data1),
-        .read_data2(read_data2)
+        .rfwr_enable(reg_write),
+        .rs1_address(rs1),
+        .rs2_address(rs2),
+        .rd_address(rd),
+        .rd_data(write_back_data),
+        .rs1_data(read_data1),
+        .rs2_data(read_data2),
+        // Puertos VGA
+        .vga_reg_address(vga_reg_address),
+        .vga_reg_data(vga_reg_data)
     );
     
     // ========================================
@@ -133,9 +141,10 @@ module ProcesadorMonociclo_32bits_VGA (
     // MÓDULO: ALU
     // ========================================
     ALU_32bits alu (
-        .a(read_data1),
-        .b(alu_input2),
-        .alu_op(alu_op),
+        .arg1(read_data1),
+        .arg2(alu_input2),
+        .f3(funct3),
+        .f9(alu_op[3]),  // Usar bit superior de alu_op como f9
         .result(alu_result),
         .zero()  // No usado en esta versión
     );
@@ -143,11 +152,15 @@ module ProcesadorMonociclo_32bits_VGA (
     // ========================================
     // MÓDULO: Unidad de Branch
     // ========================================
+    // Determinar si es instrucción de branch
+    wire is_branch;
+    assign is_branch = (opcode == 7'b1100011);  // Branch opcode
+    
     Branch_32bit branch_unit (
-        .opcode(opcode),
+        .rs1_data(read_data1),
+        .rs2_data(read_data2),
         .funct3(funct3),
-        .operand_a(read_data1),
-        .operand_b(read_data2),
+        .branch(is_branch),
         .branch_taken(branch_taken)
     );
     
@@ -161,9 +174,9 @@ module ProcesadorMonociclo_32bits_VGA (
         .address(alu_result),
         .write_data(read_data2),
         .read_data(mem_read_data),
-        // Puerto VGA
-        .vga_address({22'd0, vga_mem_addr}),
-        .vga_data(vga_mem_data)
+        // Puerto VGA - Temporalmente sin conexión para test pattern
+        .vga_address(32'd0),
+        .vga_data()  // No conectado
     );
     
     // ========================================
@@ -203,17 +216,29 @@ module ProcesadorMonociclo_32bits_VGA (
     );
     
     // ========================================
-    // MÓDULO: Visualizador de Memoria VGA
+    // MÓDULO: Panel de Debug RISC-V en VGA
     // ========================================
-    VGA_Memory_Display vga_display (
+    VGA_RISCV_Debug_Panel vga_display (
         .clk_vga(vga_clk),
         .clk_sys(CLOCK_50),
         .reset(reset),
         .x(vga_x),
         .y(vga_y),
         .video_on(vga_video_on),
-        .mem_data(vga_mem_data),
-        .mem_addr(vga_mem_addr),
+        // Señales del procesador
+        .pc(pc_current),
+        .instruction(instruction),
+        .alu_result(alu_result),
+        .reg_rs1_data(read_data1),
+        .reg_rs2_data(read_data2),
+        .reg_rd_data(write_back_data),
+        .rs1(rs1),
+        .rs2(rs2),
+        .rd(rd),
+        // Puerto para leer cualquier registro
+        .vga_reg_address(vga_reg_address),
+        .vga_reg_data(vga_reg_data),
+        // Salidas RGB
         .vga_red(VGA_R),
         .vga_green(VGA_G),
         .vga_blue(VGA_B)

@@ -81,11 +81,11 @@ module clock1280x800(clock50, reset, vgaclk);
   input reset;
   output vgaclk;
 
-  wire  null;
+  wire  unused_reset;
   vgaClock clk(
 	.ref_clk_clk(clock50),
 	.ref_reset_reset(reset),
-	.reset_source_reset(null),
+	.reset_source_reset(unused_reset),
 	.vga_clk_clk(vgaclk));
 endmodule
 
@@ -119,22 +119,17 @@ parameter V_TOTAL   = V_VISIBLE + V_FP + V_SYNC + V_BP; // 831
 // --------------------------
 // Counters and Sync Logic
 // --------------------------
-always @(posedge clk or posedge reset) begin
-  if (reset) begin
+always @(posedge clk) begin
+  // Horizontal counter
+  if (hcount == H_TOTAL - 1) begin
     hcount <= 0;
-    vcount <= 0;
+    // Vertical counter
+    if (vcount == V_TOTAL - 1)
+      vcount <= 0;
+    else
+      vcount <= vcount + 1;
   end else begin
-    // Horizontal counter
-    if (hcount == H_TOTAL - 1) begin
-      hcount <= 0;
-      // Vertical counter
-      if (vcount == V_TOTAL - 1)
-        vcount <= 0;
-      else
-        vcount <= vcount + 1;
-    end else begin
-      hcount <= hcount + 1;
-    end
+    hcount <= hcount + 1;
   end
 end
 

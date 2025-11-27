@@ -9,7 +9,10 @@ module RF24_32bit (
     input      [4:0]  rs1_address,  // Dirección del primer registro fuente
     input      [4:0]  rs2_address,  // Dirección del segundo registro fuente
     output reg [31:0] rs1_data,     // Datos del primer registro fuente
-    output reg [31:0] rs2_data      // Datos del segundo registro fuente
+    output reg [31:0] rs2_data,     // Datos del segundo registro fuente
+    // Puertos VGA para leer cualquier registro
+    input      [4:0]  vga_reg_address,
+    output reg [31:0] vga_reg_data
 );
 
     // Banco de 32 registros de 32 bits cada uno
@@ -45,6 +48,13 @@ module RF24_32bit (
             rs2_data = 32'd0;  // x0 siempre es 0
         end else begin
             rs2_data = register_file[rs2_address];
+        end
+        
+        // Lectura VGA
+        if (vga_reg_address == 5'd0) begin
+            vga_reg_data = 32'd0;
+        end else begin
+            vga_reg_data = register_file[vga_reg_address];
         end
     end
 
