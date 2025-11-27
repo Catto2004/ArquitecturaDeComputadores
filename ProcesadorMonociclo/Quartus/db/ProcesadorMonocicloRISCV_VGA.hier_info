@@ -1,45 +1,87 @@
 |ProcesadorMonociclo_32bits_VGA
 CLOCK_50 => CLOCK_50.IN5
-reset => reset.IN4
-LEDR[0] << pc_current[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[1] << pc_current[1].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[2] << pc_current[2].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[3] << pc_current[3].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[4] << pc_current[4].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[5] << pc_current[5].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[6] << pc_current[6].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[7] << pc_current[7].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[8] << pc_current[8].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[9] << pc_current[9].DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[0] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_R[1] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_R[2] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_R[3] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_R[4] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_R[5] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_R[6] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_R[7] << VGA_RISCV_Debug_Panel:vga_display.vga_red
-VGA_G[0] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_G[1] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_G[2] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_G[3] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_G[4] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_G[5] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_G[6] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_G[7] << VGA_RISCV_Debug_Panel:vga_display.vga_green
-VGA_B[0] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_B[1] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_B[2] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_B[3] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_B[4] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_B[5] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_B[6] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_B[7] << VGA_RISCV_Debug_Panel:vga_display.vga_blue
-VGA_HS << vga_controller_1280x800:vga_ctrl.hsync
-VGA_VS << vga_controller_1280x800:vga_ctrl.vsync
-VGA_CLK << vga_clk.DB_MAX_OUTPUT_PORT_TYPE
-VGA_BLANK_N << vga_video_on.DB_MAX_OUTPUT_PORT_TYPE
-VGA_SYNC_N << <GND>
+reset => reset.IN3
+LEDR[0] <= pc_current[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= pc_current[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= pc_current[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= pc_current[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= pc_current[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= pc_current[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= pc_current[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= pc_current[7].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= pc_current[8].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= pc_current[9].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= hex_to_7seg:hex0_decoder.seg
+HEX0[1] <= hex_to_7seg:hex0_decoder.seg
+HEX0[2] <= hex_to_7seg:hex0_decoder.seg
+HEX0[3] <= hex_to_7seg:hex0_decoder.seg
+HEX0[4] <= hex_to_7seg:hex0_decoder.seg
+HEX0[5] <= hex_to_7seg:hex0_decoder.seg
+HEX0[6] <= hex_to_7seg:hex0_decoder.seg
+HEX1[0] <= hex_to_7seg:hex1_decoder.seg
+HEX1[1] <= hex_to_7seg:hex1_decoder.seg
+HEX1[2] <= hex_to_7seg:hex1_decoder.seg
+HEX1[3] <= hex_to_7seg:hex1_decoder.seg
+HEX1[4] <= hex_to_7seg:hex1_decoder.seg
+HEX1[5] <= hex_to_7seg:hex1_decoder.seg
+HEX1[6] <= hex_to_7seg:hex1_decoder.seg
+HEX2[0] <= hex_to_7seg:hex2_decoder.seg
+HEX2[1] <= hex_to_7seg:hex2_decoder.seg
+HEX2[2] <= hex_to_7seg:hex2_decoder.seg
+HEX2[3] <= hex_to_7seg:hex2_decoder.seg
+HEX2[4] <= hex_to_7seg:hex2_decoder.seg
+HEX2[5] <= hex_to_7seg:hex2_decoder.seg
+HEX2[6] <= hex_to_7seg:hex2_decoder.seg
+HEX3[0] <= hex_to_7seg:hex3_decoder.seg
+HEX3[1] <= hex_to_7seg:hex3_decoder.seg
+HEX3[2] <= hex_to_7seg:hex3_decoder.seg
+HEX3[3] <= hex_to_7seg:hex3_decoder.seg
+HEX3[4] <= hex_to_7seg:hex3_decoder.seg
+HEX3[5] <= hex_to_7seg:hex3_decoder.seg
+HEX3[6] <= hex_to_7seg:hex3_decoder.seg
+HEX4[0] <= hex_to_7seg:hex4_decoder.seg
+HEX4[1] <= hex_to_7seg:hex4_decoder.seg
+HEX4[2] <= hex_to_7seg:hex4_decoder.seg
+HEX4[3] <= hex_to_7seg:hex4_decoder.seg
+HEX4[4] <= hex_to_7seg:hex4_decoder.seg
+HEX4[5] <= hex_to_7seg:hex4_decoder.seg
+HEX4[6] <= hex_to_7seg:hex4_decoder.seg
+HEX5[0] <= hex_to_7seg:hex5_decoder.seg
+HEX5[1] <= hex_to_7seg:hex5_decoder.seg
+HEX5[2] <= hex_to_7seg:hex5_decoder.seg
+HEX5[3] <= hex_to_7seg:hex5_decoder.seg
+HEX5[4] <= hex_to_7seg:hex5_decoder.seg
+HEX5[5] <= hex_to_7seg:hex5_decoder.seg
+HEX5[6] <= hex_to_7seg:hex5_decoder.seg
+VGA_R[0] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_R[1] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_R[2] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_R[3] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_R[4] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_R[5] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_R[6] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_R[7] <= VGA_RISCV_Debug_Panel:vga_display.vga_red
+VGA_G[0] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_G[1] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_G[2] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_G[3] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_G[4] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_G[5] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_G[6] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_G[7] <= VGA_RISCV_Debug_Panel:vga_display.vga_green
+VGA_B[0] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_B[1] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_B[2] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_B[3] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_B[4] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_B[5] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_B[6] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_B[7] <= VGA_RISCV_Debug_Panel:vga_display.vga_blue
+VGA_HS <= vga_controller_1280x800:vga_ctrl.hsync
+VGA_VS <= vga_controller_1280x800:vga_ctrl.vsync
+VGA_CLK <= vga_clk.DB_MAX_OUTPUT_PORT_TYPE
+VGA_BLANK_N <= vga_video_on.DB_MAX_OUTPUT_PORT_TYPE
+VGA_SYNC_N <= <GND>
 
 
 |ProcesadorMonociclo_32bits_VGA|PC_32bit:program_counter
@@ -5111,5 +5153,89 @@ vga_blue[4] <= vga_blue[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vga_blue[5] <= vga_blue[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vga_blue[6] <= vga_blue[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vga_blue[7] <= vga_blue[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex0_decoder
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex1_decoder
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex2_decoder
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex3_decoder
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex4_decoder
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex5_decoder
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

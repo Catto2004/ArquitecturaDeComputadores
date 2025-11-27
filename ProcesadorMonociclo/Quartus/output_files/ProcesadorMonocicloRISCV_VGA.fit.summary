@@ -1,13 +1,13 @@
-Fitter Status : Successful - Tue Nov 25 20:21:36 2025
+Fitter Status : Successful - Thu Nov 27 16:10:46 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : ProcesadorMonocicloRISCV_VGA
 Top-level Entity Name : ProcesadorMonociclo_32bits_VGA
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 157 / 32,070 ( < 1 % )
-Total registers : 123
-Total pins : 41 / 457 ( 9 % )
+Logic utilization (in ALMs) : 176 / 32,070 ( < 1 % )
+Total registers : 121
+Total pins : 83 / 457 ( 18 % )
 Total virtual pins : 0
 Total block memory bits : 16,384 / 4,065,280 ( < 1 % )
 Total RAM Blocks : 2 / 397 ( < 1 % )

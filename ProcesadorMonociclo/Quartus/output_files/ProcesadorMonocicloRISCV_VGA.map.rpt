@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProcesadorMonocicloRISCV_VGA
-Tue Nov 25 20:21:09 2025
+Thu Nov 27 16:06:46 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -28,17 +28,18 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  20. Parameter Settings for Inferred Entity Instance: VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Mod0
  21. Parameter Settings for Inferred Entity Instance: VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Div0
  22. altsyncram Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i"
- 24. Port Connectivity Checks: "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll"
- 25. Port Connectivity Checks: "clock1280x800:vga_clock_gen|vgaClock:clk"
- 26. Port Connectivity Checks: "DataMemory_32bits_VGA:data_memory"
- 27. Port Connectivity Checks: "ALU_32bits:alu"
- 28. Port Connectivity Checks: "CU_32bits:control_unit"
- 29. Port Connectivity Checks: "PC_32bit:program_counter"
- 30. Post-Synthesis Netlist Statistics for Top Partition
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
- 33. Analysis & Synthesis Suppressed Messages
+ 23. Port Connectivity Checks: "VGA_RISCV_Debug_Panel:vga_display"
+ 24. Port Connectivity Checks: "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i"
+ 25. Port Connectivity Checks: "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll"
+ 26. Port Connectivity Checks: "clock1280x800:vga_clock_gen|vgaClock:clk"
+ 27. Port Connectivity Checks: "DataMemory_32bits_VGA:data_memory"
+ 28. Port Connectivity Checks: "ALU_32bits:alu"
+ 29. Port Connectivity Checks: "CU_32bits:control_unit"
+ 30. Port Connectivity Checks: "PC_32bit:program_counter"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -65,14 +66,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 25 20:21:09 2025          ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 27 16:06:46 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; ProcesadorMonocicloRISCV_VGA                   ;
 ; Top-level Entity Name           ; ProcesadorMonociclo_32bits_VGA                 ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
 ; Total registers                 ; 105                                            ;
-; Total pins                      ; 41                                             ;
+; Total pins                      ; 83                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 16,384                                         ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -195,17 +196,17 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 ; File Name with User-Entered Path                                                                                                                       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                                                 ; Library  ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
-; ProcesadorMonociclo_32bits_VGA.v                                                                                                                       ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v                                            ;          ;
-; VGA_RISCV_Debug_Panel.v                                                                                                                                ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v                                                     ;          ;
-; VGA_Controller_1280x800.v                                                                                                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v                                                   ;          ;
-; ALU_32bits.v                                                                                                                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ALU_32bits.v                                                                ;          ;
-; PC_32bit.v                                                                                                                                             ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PC_32bit.v                                                                  ;          ;
-; RF24_32bit.v                                                                                                                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/RF24_32bit.v                                                                ;          ;
-; font_8x16.hex                                                                                                                                          ; yes             ; User Hexadecimal (Intel-Format) File                  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/font_8x16.hex                                                               ;          ;
-; PM24_32bit.v                                                                                                                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v                                                                ;          ;
-; Immediate_32bits.v                                                                                                                                     ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Immediate_32bits.v                                                          ;          ;
-; Branch_32bit.v                                                                                                                                         ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Branch_32bit.v                                                              ;          ;
-; CU_32bits.v                                                                                                                                            ; yes             ; User Verilog HDL File                                 ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/CU_32bits.v                                                                 ;          ;
+; ProcesadorMonociclo_32bits_VGA.v                                                                                                                       ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v                                            ;          ;
+; VGA_RISCV_Debug_Panel.v                                                                                                                                ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v                                                     ;          ;
+; VGA_Controller_1280x800.v                                                                                                                              ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v                                                   ;          ;
+; ALU_32bits.v                                                                                                                                           ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ALU_32bits.v                                                                ;          ;
+; PC_32bit.v                                                                                                                                             ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PC_32bit.v                                                                  ;          ;
+; RF24_32bit.v                                                                                                                                           ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/RF24_32bit.v                                                                ;          ;
+; font_8x16.hex                                                                                                                                          ; yes             ; User Hexadecimal (Intel-Format) File                  ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/font_8x16.hex                                                               ;          ;
+; PM24_32bit.v                                                                                                                                           ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v                                                                ;          ;
+; Immediate_32bits.v                                                                                                                                     ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Immediate_32bits.v                                                          ;          ;
+; Branch_32bit.v                                                                                                                                         ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Branch_32bit.v                                                              ;          ;
+; CU_32bits.v                                                                                                                                            ; yes             ; User Verilog HDL File                                 ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/CU_32bits.v                                                                 ;          ;
 ; c:/users/joseo/desktop/code/arquitecturacomputadores/procesadormonociclo/quartus/db/ip/vgaclock/submodules/altera_up_avalon_reset_from_locked_signal.v ; yes             ; Auto-Found Verilog HDL File                           ; c:/users/joseo/desktop/code/arquitecturacomputadores/procesadormonociclo/quartus/db/ip/vgaclock/submodules/altera_up_avalon_reset_from_locked_signal.v       ; vgaClock ;
 ; c:/users/joseo/desktop/code/arquitecturacomputadores/procesadormonociclo/quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v                      ; yes             ; Auto-Found Verilog HDL File                           ; c:/users/joseo/desktop/code/arquitecturacomputadores/procesadormonociclo/quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v                            ; vgaClock ;
 ; c:/users/joseo/desktop/code/arquitecturacomputadores/procesadormonociclo/quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v            ; yes             ; Auto-Found Verilog HDL File                           ; c:/users/joseo/desktop/code/arquitecturacomputadores/procesadormonociclo/quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v                  ; vgaClock ;
@@ -220,15 +221,15 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                                                                                                                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                                                         ;          ;
 ; altram.inc                                                                                                                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                                                         ;          ;
 ; altdpram.inc                                                                                                                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                                                       ;          ;
-; db/altsyncram_grg1.tdf                                                                                                                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/altsyncram_grg1.tdf                                                      ;          ;
-; db/procesadormonocicloriscv_vga.ram0_vga_riscv_debug_panel_b715dc34.hdl.mif                                                                            ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/procesadormonocicloriscv_vga.ram0_vga_riscv_debug_panel_b715dc34.hdl.mif ;          ;
+; db/altsyncram_grg1.tdf                                                                                                                                 ; yes             ; Auto-Generated Megafunction                           ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/altsyncram_grg1.tdf                                                      ;          ;
+; db/procesadormonocicloriscv_vga.ram0_vga_riscv_debug_panel_b715dc34.hdl.mif                                                                            ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/procesadormonocicloriscv_vga.ram0_vga_riscv_debug_panel_b715dc34.hdl.mif ;          ;
 ; lpm_divide.tdf                                                                                                                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                     ;          ;
 ; abs_divider.inc                                                                                                                                        ; yes             ; Megafunction                                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/abs_divider.inc                                                                                    ;          ;
 ; sign_div_unsign.inc                                                                                                                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                                ;          ;
-; db/lpm_divide_52m.tdf                                                                                                                                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_52m.tdf                                                       ;          ;
-; db/sign_div_unsign_8kh.tdf                                                                                                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/sign_div_unsign_8kh.tdf                                                  ;          ;
-; db/alt_u_div_mse.tdf                                                                                                                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/alt_u_div_mse.tdf                                                        ;          ;
-; db/lpm_divide_2am.tdf                                                                                                                                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_2am.tdf                                                       ;          ;
+; db/lpm_divide_52m.tdf                                                                                                                                  ; yes             ; Auto-Generated Megafunction                           ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_52m.tdf                                                       ;          ;
+; db/sign_div_unsign_8kh.tdf                                                                                                                             ; yes             ; Auto-Generated Megafunction                           ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/sign_div_unsign_8kh.tdf                                                  ;          ;
+; db/alt_u_div_mse.tdf                                                                                                                                   ; yes             ; Auto-Generated Megafunction                           ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/alt_u_div_mse.tdf                                                        ;          ;
+; db/lpm_divide_2am.tdf                                                                                                                                  ; yes             ; Auto-Generated Megafunction                           ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_2am.tdf                                                       ;          ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 
 
@@ -237,18 +238,18 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                                                     ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 149                                                                                                                                                       ;
+; Estimate of Logic utilization (ALMs needed) ; 168                                                                                                                                                       ;
 ;                                             ;                                                                                                                                                           ;
-; Combinational ALUT usage for logic          ; 244                                                                                                                                                       ;
+; Combinational ALUT usage for logic          ; 282                                                                                                                                                       ;
 ;     -- 7 input functions                    ; 11                                                                                                                                                        ;
 ;     -- 6 input functions                    ; 37                                                                                                                                                        ;
 ;     -- 5 input functions                    ; 28                                                                                                                                                        ;
-;     -- 4 input functions                    ; 26                                                                                                                                                        ;
-;     -- <=3 input functions                  ; 142                                                                                                                                                       ;
+;     -- 4 input functions                    ; 61                                                                                                                                                        ;
+;     -- <=3 input functions                  ; 145                                                                                                                                                       ;
 ;                                             ;                                                                                                                                                           ;
 ; Dedicated logic registers                   ; 105                                                                                                                                                       ;
 ;                                             ;                                                                                                                                                           ;
-; I/O pins                                    ; 41                                                                                                                                                        ;
+; I/O pins                                    ; 83                                                                                                                                                        ;
 ; Total MLAB memory bits                      ; 0                                                                                                                                                         ;
 ; Total block memory bits                     ; 16384                                                                                                                                                     ;
 ;                                             ;                                                                                                                                                           ;
@@ -259,8 +260,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                                                           ;
 ; Maximum fan-out node                        ; clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i|outclk_wire[1] ;
 ; Maximum fan-out                             ; 84                                                                                                                                                        ;
-; Total fan-out                               ; 1397                                                                                                                                                      ;
-; Average fan-out                             ; 3.17                                                                                                                                                      ;
+; Total fan-out                               ; 1626                                                                                                                                                      ;
+; Average fan-out                             ; 2.89                                                                                                                                                      ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -269,7 +270,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
 ; Compilation Hierarchy Node                             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                        ; Entity Name                    ; Library Name ;
 +--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
-; |ProcesadorMonociclo_32bits_VGA                        ; 244 (60)            ; 105 (0)                   ; 16384             ; 0          ; 41   ; 0            ; |ProcesadorMonociclo_32bits_VGA                                                                                                                                            ; ProcesadorMonociclo_32bits_VGA ; work         ;
+; |ProcesadorMonociclo_32bits_VGA                        ; 282 (60)            ; 105 (0)                   ; 16384             ; 0          ; 83   ; 0            ; |ProcesadorMonociclo_32bits_VGA                                                                                                                                            ; ProcesadorMonociclo_32bits_VGA ; work         ;
 ;    |Immediate_32bits:imm_gen|                          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|Immediate_32bits:imm_gen                                                                                                                   ; Immediate_32bits               ; work         ;
 ;    |PC_32bit:program_counter|                          ; 0 (0)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|PC_32bit:program_counter                                                                                                                   ; PC_32bit                       ; work         ;
 ;    |PM24_32bit:program_memory|                         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|PM24_32bit:program_memory                                                                                                                  ; PM24_32bit                     ; work         ;
@@ -289,6 +290,12 @@ https://fpgasoftware.intel.com/eula.
 ;          |vgaClock_video_pll_0:video_pll_0|            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0                                                                  ; vgaClock_video_pll_0           ; vgaClock     ;
 ;             |vgaClock_video_pll_0_video_pll:video_pll| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll                         ; vgaClock_video_pll_0_video_pll ; vgaClock     ;
 ;                |altera_pll:altera_pll_i|               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i ; altera_pll                     ; work         ;
+;    |hex_to_7seg:hex0_decoder|                          ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex0_decoder                                                                                                                   ; hex_to_7seg                    ; work         ;
+;    |hex_to_7seg:hex1_decoder|                          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex1_decoder                                                                                                                   ; hex_to_7seg                    ; work         ;
+;    |hex_to_7seg:hex2_decoder|                          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex2_decoder                                                                                                                   ; hex_to_7seg                    ; work         ;
+;    |hex_to_7seg:hex3_decoder|                          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex3_decoder                                                                                                                   ; hex_to_7seg                    ; work         ;
+;    |hex_to_7seg:hex4_decoder|                          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex4_decoder                                                                                                                   ; hex_to_7seg                    ; work         ;
+;    |hex_to_7seg:hex5_decoder|                          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|hex_to_7seg:hex5_decoder                                                                                                                   ; hex_to_7seg                    ; work         ;
 ;    |vga_controller_1280x800:vga_ctrl|                  ; 32 (32)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |ProcesadorMonociclo_32bits_VGA|vga_controller_1280x800:vga_ctrl                                                                                                           ; vga_controller_1280x800        ; work         ;
 +--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -308,7 +315,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                          ; IP Include File                                                                                  ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-; N/A    ; altera_pll   ; 23.1    ; N/A          ; N/A          ; |ProcesadorMonociclo_32bits_VGA|clock1280x800:vga_clock_gen|vgaClock:clk ; C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/CodigoVGA/vgaClock.qsys ;
+; N/A    ; altera_pll   ; 23.1    ; N/A          ; N/A          ; |ProcesadorMonociclo_32bits_VGA|clock1280x800:vga_clock_gen|vgaClock:clk ; c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/CodigoVGA/vgaClock.qsys ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 
@@ -1855,7 +1862,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
-; 33:1               ; 32 bits   ; 704 LEs       ; 320 LEs              ; 384 LEs                ; Yes        ; |ProcesadorMonociclo_32bits_VGA|VGA_RISCV_Debug_Panel:vga_display|vga_reg_data_captured[1] ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 320 LEs              ; 384 LEs                ; Yes        ; |ProcesadorMonociclo_32bits_VGA|VGA_RISCV_Debug_Panel:vga_display|vga_reg_data_captured[0] ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits_VGA|ALU_32bits:alu|ShiftRight0                                 ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits_VGA|ALU_32bits:alu|ShiftLeft0                                  ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ProcesadorMonociclo_32bits_VGA|ALU_32bits:alu|ShiftRight0                                 ;
@@ -2294,6 +2301,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------+
 
 
++---------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_RISCV_Debug_Panel:vga_display" ;
++-------+-------+----------+------------------------------------+
+; Port  ; Type  ; Severity ; Details                            ;
++-------+-------+----------+------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                       ;
++-------+-------+----------+------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i"               ;
 +-------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2394,7 +2410,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 11                          ;
 ;     plain             ; 54                          ;
-; arriav_lcell_comb     ; 247                         ;
+; arriav_lcell_comb     ; 291                         ;
 ;     arith             ; 107                         ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 57                          ;
@@ -2404,20 +2420,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 4                           ;
 ;     extend            ; 11                          ;
 ;         7 data inputs ; 11                          ;
-;     normal            ; 129                         ;
+;     normal            ; 173                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 11                          ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 14                          ;
 ;         3 data inputs ; 32                          ;
-;         4 data inputs ; 22                          ;
+;         4 data inputs ; 57                          ;
 ;         5 data inputs ; 24                          ;
 ;         6 data inputs ; 37                          ;
-; boundary_port         ; 41                          ;
+; boundary_port         ; 83                          ;
 ; generic_pll           ; 2                           ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.60                        ;
-; Average LUT depth     ; 3.98                        ;
+; Average LUT depth     ; 3.74                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2426,7 +2442,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -2436,76 +2452,91 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Nov 25 20:20:52 2025
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProcesadorMonocicloRISCV_VGA -c ProcesadorMonocicloRISCV_VGA
+    Info: Copyright (C) 2024  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Thu Nov 27 16:06:26 2025
+Info: Command: quartus_map c:\Users\joseo\Desktop\Code\ArquitecturaComputadores\ProcesadorMonociclo\Quartus\ProcesadorMonocicloRISCV_VGA.qpf
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12248): Elaborating Platform Designer system entity "vgaClock.qsys"
-Info (12250): 2025.11.25.20:21:00 Progress: Loading CodigoVGA/vgaClock.qsys
-Info (12250): 2025.11.25.20:21:01 Progress: Reading input file
-Info (12250): 2025.11.25.20:21:01 Progress: Adding video_pll_0 [altera_up_avalon_video_pll 18.0]
-Info (12250): 2025.11.25.20:21:01 Progress: Parameterizing module video_pll_0
-Info (12250): 2025.11.25.20:21:01 Progress: Building connections
-Info (12250): 2025.11.25.20:21:01 Progress: Parameterizing connections
-Info (12250): 2025.11.25.20:21:01 Progress: Validating
-Info (12250): 2025.11.25.20:21:03 Progress: Done reading input file
+Info (12250): 2025.11.27.16:06:36 Progress: Loading CodigoVGA/vgaClock.qsys
+Info (12250): 2025.11.27.16:06:36 Progress: Reading input file
+Info (12250): 2025.11.27.16:06:36 Progress: Adding video_pll_0 [altera_up_avalon_video_pll 18.0]
+Info (12250): 2025.11.27.16:06:36 Progress: Parameterizing module video_pll_0
+Info (12250): 2025.11.27.16:06:36 Progress: Building connections
+Info (12250): 2025.11.27.16:06:36 Progress: Parameterizing connections
+Info (12250): 2025.11.27.16:06:36 Progress: Validating
+Info (12250): 2025.11.27.16:06:39 Progress: Done reading input file
 Info (12250): VgaClock: Generating vgaClock "vgaClock" for QUARTUS_SYNTH
 Info (12250): Video_pll_0: "vgaClock" instantiated altera_up_avalon_video_pll "video_pll_0"
 Info (12250): Video_pll: "video_pll_0" instantiated altera_pll "video_pll"
 Info (12250): Reset_from_locked: "video_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
 Info (12250): VgaClock: Done "vgaClock" with 4 modules, 5 files
 Info (12249): Finished elaborating Platform Designer system entity "vgaClock.qsys"
-Info (12021): Found 2 design units, including 2 entities, in source file procesadormonociclo_32bits_vga.v
-    Info (12023): Found entity 1: ProcesadorMonociclo_32bits_VGA File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 7
-    Info (12023): Found entity 2: DataMemory_32bits_VGA File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 253
+Info (12021): Found 3 design units, including 3 entities, in source file procesadormonociclo_32bits_vga.v
+    Info (12023): Found entity 1: ProcesadorMonociclo_32bits_VGA File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 7
+    Info (12023): Found entity 2: DataMemory_32bits_VGA File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 271
+    Info (12023): Found entity 3: hex_to_7seg File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 338
 Info (12021): Found 1 design units, including 1 entities, in source file vga_riscv_debug_panel.v
-    Info (12023): Found entity 1: VGA_RISCV_Debug_Panel File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 5
+    Info (12023): Found entity 1: VGA_RISCV_Debug_Panel File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 5
 Info (12021): Found 3 design units, including 3 entities, in source file vga_controller_1280x800.v
-    Info (12023): Found entity 1: color File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 1
-    Info (12023): Found entity 2: clock1280x800 File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 79
-    Info (12023): Found entity 3: vga_controller_1280x800 File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 92
+    Info (12023): Found entity 1: color File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 1
+    Info (12023): Found entity 2: clock1280x800 File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 79
+    Info (12023): Found entity 3: vga_controller_1280x800 File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 92
 Info (12021): Found 1 design units, including 1 entities, in source file alu_32bits.v
-    Info (12023): Found entity 1: ALU_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ALU_32bits.v Line: 5
+    Info (12023): Found entity 1: ALU_32bits File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ALU_32bits.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file pc_32bit.v
-    Info (12023): Found entity 1: PC_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PC_32bit.v Line: 5
+    Info (12023): Found entity 1: PC_32bit File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PC_32bit.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rf24_32bit.v
-    Info (12023): Found entity 1: RF24_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/RF24_32bit.v Line: 4
+    Info (12023): Found entity 1: RF24_32bit File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/RF24_32bit.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file pm24_32bit.v
-    Info (12023): Found entity 1: PM24_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 4
+    Info (12023): Found entity 1: PM24_32bit File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file immediate_32bits.v
-    Info (12023): Found entity 1: Immediate_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Immediate_32bits.v Line: 6
+    Info (12023): Found entity 1: Immediate_32bits File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Immediate_32bits.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file branch_32bit.v
-    Info (12023): Found entity 1: Branch_32bit File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Branch_32bit.v Line: 6
+    Info (12023): Found entity 1: Branch_32bit File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/Branch_32bit.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file cu_32bits.v
-    Info (12023): Found entity 1: CU_32bits File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/CU_32bits.v Line: 6
+    Info (12023): Found entity 1: CU_32bits File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/CU_32bits.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgaclock/submodules/altera_up_avalon_reset_from_locked_signal.v
-    Info (12023): Found entity 1: altera_up_avalon_reset_from_locked_signal File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/altera_up_avalon_reset_from_locked_signal.v Line: 28
+    Info (12023): Found entity 1: altera_up_avalon_reset_from_locked_signal File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/altera_up_avalon_reset_from_locked_signal.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgaclock/submodules/vgaclock_video_pll_0.v
-    Info (12023): Found entity 1: vgaClock_video_pll_0 File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v Line: 9
+    Info (12023): Found entity 1: vgaClock_video_pll_0 File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v
-    Info (12023): Found entity 1: vgaClock_video_pll_0_video_pll File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 2
+    Info (12023): Found entity 1: vgaClock_video_pll_0_video_pll File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgaclock/vgaclock.v
-    Info (12023): Found entity 1: vgaClock File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/vgaclock.v Line: 6
-Warning (10236): Verilog HDL Implicit Net warning at VGA_Controller_1280x800.v(24): created implicit net for "reset" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 24
+    Info (12023): Found entity 1: vgaClock File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/vgaclock.v Line: 6
+Warning (10236): Verilog HDL Implicit Net warning at VGA_Controller_1280x800.v(24): created implicit net for "reset" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 24
 Info (12127): Elaborating entity "ProcesadorMonociclo_32bits_VGA" for the top level hierarchy
-Info (12128): Elaborating entity "PC_32bit" for hierarchy "PC_32bit:program_counter" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 75
-Info (12128): Elaborating entity "PM24_32bit" for hierarchy "PM24_32bit:program_memory" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 83
-Warning (10030): Net "program_memory.data_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
-Warning (10030): Net "program_memory.waddr_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
-Warning (10030): Net "program_memory.we_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
-Info (12128): Elaborating entity "Immediate_32bits" for hierarchy "Immediate_32bits:imm_gen" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 101
-Info (12128): Elaborating entity "CU_32bits" for hierarchy "CU_32bits:control_unit" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 116
-Info (12128): Elaborating entity "RF24_32bit" for hierarchy "RF24_32bit:register_file" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 133
-Info (12128): Elaborating entity "ALU_32bits" for hierarchy "ALU_32bits:alu" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 150
-Info (12128): Elaborating entity "Branch_32bit" for hierarchy "Branch_32bit:branch_unit" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 165
-Info (12128): Elaborating entity "DataMemory_32bits_VGA" for hierarchy "DataMemory_32bits_VGA:data_memory" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 180
-Info (12128): Elaborating entity "clock1280x800" for hierarchy "clock1280x800:vga_clock_gen" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 201
-Info (12128): Elaborating entity "vgaClock" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 89
-Info (12128): Elaborating entity "vgaClock_video_pll_0" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/vgaclock.v Line: 18
-Info (12128): Elaborating entity "vgaClock_video_pll_0_video_pll" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v Line: 25
-Info (12128): Elaborating entity "altera_pll" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 91
+Info (12128): Elaborating entity "PC_32bit" for hierarchy "PC_32bit:program_counter" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 83
+Info (12128): Elaborating entity "PM24_32bit" for hierarchy "PM24_32bit:program_memory" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 91
+Warning (10030): Net "program_memory.data_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
+Warning (10030): Net "program_memory.waddr_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
+Warning (10030): Net "program_memory.we_a" at PM24_32bit.v(12) has no driver or initial value, using a default initial value '0' File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
+Info (12128): Elaborating entity "Immediate_32bits" for hierarchy "Immediate_32bits:imm_gen" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 109
+Info (12128): Elaborating entity "CU_32bits" for hierarchy "CU_32bits:control_unit" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 124
+Info (12128): Elaborating entity "RF24_32bit" for hierarchy "RF24_32bit:register_file" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 141
+Info (12128): Elaborating entity "ALU_32bits" for hierarchy "ALU_32bits:alu" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 158
+Info (12128): Elaborating entity "Branch_32bit" for hierarchy "Branch_32bit:branch_unit" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 173
+Info (12128): Elaborating entity "DataMemory_32bits_VGA" for hierarchy "DataMemory_32bits_VGA:data_memory" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 188
+Info (12128): Elaborating entity "clock1280x800" for hierarchy "clock1280x800:vga_clock_gen" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 209
+Info (12128): Elaborating entity "vgaClock" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 89
+Info (12128): Elaborating entity "vgaClock_video_pll_0" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/vgaclock.v Line: 18
+Info (12128): Elaborating entity "vgaClock_video_pll_0_video_pll" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v Line: 25
+Info (12128): Elaborating entity "altera_pll" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 91
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 91
-Info (12133): Instantiated megafunction "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 91
+Info (12130): Elaborated megafunction instantiation "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 91
+Info (12133): Instantiated megafunction "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i" with the following parameter: File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0_video_pll.v Line: 91
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -2566,42 +2597,43 @@ Info (12133): Instantiated megafunction "clock1280x800:vga_clock_gen|vgaClock:cl
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "altera_up_avalon_reset_from_locked_signal" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|altera_up_avalon_reset_from_locked_signal:reset_from_locked" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v Line: 30
-Info (12128): Elaborating entity "vga_controller_1280x800" for hierarchy "vga_controller_1280x800:vga_ctrl" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 216
-Warning (10230): Verilog HDL assignment warning at VGA_Controller_1280x800.v(130): truncated value with size 32 to match size of target (10) File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 130
-Warning (10230): Verilog HDL assignment warning at VGA_Controller_1280x800.v(132): truncated value with size 32 to match size of target (11) File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 132
-Info (12128): Elaborating entity "VGA_RISCV_Debug_Panel" for hierarchy "VGA_RISCV_Debug_Panel:vga_display" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 245
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "inst_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "alu_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "rs1_data_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "rs2_data_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "rd_data_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(46): object "rs1_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 46
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(46): object "rs2_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 46
-Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(46): object "rd_vga" assigned a value but never read File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 46
-Warning (10850): Verilog HDL warning at VGA_RISCV_Debug_Panel.v(35): number of words (1040) in memory file does not match the number of elements in the address range [0:2047] File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 35
-Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(65): truncated value with size 32 to match size of target (5) File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 65
-Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(201): truncated value with size 32 to match size of target (8) File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 201
-Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(146): truncated value with size 32 to match size of target (5) File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 146
-Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(156): truncated value with size 32 to match size of target (8) File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
-Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(163): truncated value with size 32 to match size of target (8) File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
-Warning (10030): Net "font_rom.data_a" at VGA_RISCV_Debug_Panel.v(32) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 32
-Warning (10030): Net "font_rom.waddr_a" at VGA_RISCV_Debug_Panel.v(32) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 32
-Warning (10030): Net "font_rom.we_a" at VGA_RISCV_Debug_Panel.v(32) has no driver or initial value, using a default initial value '0' File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 32
+Info (12128): Elaborating entity "altera_up_avalon_reset_from_locked_signal" for hierarchy "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|altera_up_avalon_reset_from_locked_signal:reset_from_locked" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/ip/vgaclock/submodules/vgaclock_video_pll_0.v Line: 30
+Info (12128): Elaborating entity "vga_controller_1280x800" for hierarchy "vga_controller_1280x800:vga_ctrl" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 224
+Warning (10230): Verilog HDL assignment warning at VGA_Controller_1280x800.v(130): truncated value with size 32 to match size of target (10) File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 130
+Warning (10230): Verilog HDL assignment warning at VGA_Controller_1280x800.v(132): truncated value with size 32 to match size of target (11) File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_Controller_1280x800.v Line: 132
+Info (12128): Elaborating entity "VGA_RISCV_Debug_Panel" for hierarchy "VGA_RISCV_Debug_Panel:vga_display" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 253
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "inst_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "alu_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "rs1_data_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "rs2_data_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(45): object "rd_data_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 45
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(46): object "rs1_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 46
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(46): object "rs2_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 46
+Warning (10036): Verilog HDL or VHDL warning at VGA_RISCV_Debug_Panel.v(46): object "rd_vga" assigned a value but never read File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 46
+Warning (10850): Verilog HDL warning at VGA_RISCV_Debug_Panel.v(35): number of words (1040) in memory file does not match the number of elements in the address range [0:2047] File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 35
+Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(65): truncated value with size 32 to match size of target (5) File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 65
+Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(201): truncated value with size 32 to match size of target (8) File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 201
+Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(146): truncated value with size 32 to match size of target (5) File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 146
+Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(156): truncated value with size 32 to match size of target (8) File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
+Warning (10230): Verilog HDL assignment warning at VGA_RISCV_Debug_Panel.v(163): truncated value with size 32 to match size of target (8) File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
+Warning (10030): Net "font_rom.data_a" at VGA_RISCV_Debug_Panel.v(32) has no driver or initial value, using a default initial value '0' File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 32
+Warning (10030): Net "font_rom.waddr_a" at VGA_RISCV_Debug_Panel.v(32) has no driver or initial value, using a default initial value '0' File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 32
+Warning (10030): Net "font_rom.we_a" at VGA_RISCV_Debug_Panel.v(32) has no driver or initial value, using a default initial value '0' File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 32
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "hex_to_7seg:hex0_decoder" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 258
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 38
+    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 46
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 38
+    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 46
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 38
+    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 46
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 38
+    Warning (12110): Net "alu_op[3]" is missing source, defaulting to GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 46
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following PLL node(s):
         Warning (14320): Synthesized away node "clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i|outclk_wire[2]" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altera_pll.v Line: 749
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "DataMemory_32bits_VGA:data_memory|data_memory" is uninferred due to asynchronous read logic File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 265
-    Info (276007): RAM logic "PM24_32bit:program_memory|program_memory" is uninferred due to asynchronous read logic File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
+    Info (276007): RAM logic "DataMemory_32bits_VGA:data_memory|data_memory" is uninferred due to asynchronous read logic File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 283
+    Info (276007): RAM logic "PM24_32bit:program_memory|program_memory" is uninferred due to asynchronous read logic File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/PM24_32bit.v Line: 12
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "VGA_RISCV_Debug_Panel:vga_display|font_rom_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to ROM
@@ -2615,8 +2647,8 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/ProcesadorMonocicloRISCV_VGA.ram0_VGA_RISCV_Debug_Panel_b715dc34.hdl.mif
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGA_RISCV_Debug_Panel:vga_display|Mod0" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGA_RISCV_Debug_Panel:vga_display|Div0" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGA_RISCV_Debug_Panel:vga_display|Mod0" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGA_RISCV_Debug_Panel:vga_display|Div0" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
 Info (12130): Elaborated megafunction instantiation "VGA_RISCV_Debug_Panel:vga_display|altsyncram:font_rom_rtl_0"
 Info (12133): Instantiated megafunction "VGA_RISCV_Debug_Panel:vga_display|altsyncram:font_rom_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "ROM"
@@ -2630,54 +2662,55 @@ Info (12133): Instantiated megafunction "VGA_RISCV_Debug_Panel:vga_display|altsy
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/ProcesadorMonocicloRISCV_VGA.ram0_VGA_RISCV_Debug_Panel_b715dc34.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_grg1.tdf
-    Info (12023): Found entity 1: altsyncram_grg1 File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/altsyncram_grg1.tdf Line: 28
-Info (12130): Elaborated megafunction instantiation "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Mod0" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
-Info (12133): Instantiated megafunction "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Mod0" with the following parameter: File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
+    Info (12023): Found entity 1: altsyncram_grg1 File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/altsyncram_grg1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Mod0" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
+Info (12133): Instantiated megafunction "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Mod0" with the following parameter: File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 163
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_52m.tdf
-    Info (12023): Found entity 1: lpm_divide_52m File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_52m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_52m File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_52m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_8kh File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/sign_div_unsign_8kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/sign_div_unsign_8kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mse.tdf
-    Info (12023): Found entity 1: alt_u_div_mse File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/alt_u_div_mse.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Div0" File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
-Info (12133): Instantiated megafunction "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Div0" with the following parameter: File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
+    Info (12023): Found entity 1: alt_u_div_mse File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/alt_u_div_mse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Div0" File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
+Info (12133): Instantiated megafunction "VGA_RISCV_Debug_Panel:vga_display|lpm_divide:Div0" with the following parameter: File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/VGA_RISCV_Debug_Panel.v Line: 156
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2am.tdf
-    Info (12023): Found entity 1: lpm_divide_2am File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_2am.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_2am File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/db/lpm_divide_2am.tdf Line: 25
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 13
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 13
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 24
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 13
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 13
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 16
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/ProcesadorMonociclo_32bits_VGA.v Line: 32
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/output_files/ProcesadorMonocicloRISCV_VGA.map.smsg
+Info (144001): Generated suppressed messages file c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/output_files/ProcesadorMonocicloRISCV_VGA.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 8 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning: OUTCLK port on the PLL is not properly connected on instance clock1280x800:vga_clock_gen|vgaClock:clk|vgaClock_video_pll_0:video_pll_0|vgaClock_video_pll_0_video_pll:video_pll|altera_pll:altera_pll_i|general[0].gpll. The output clock port on the PLL must be connected. File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altera_pll.v Line: 749
     Info: Must be connected
-Info (21057): Implemented 349 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 429 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 298 logic cells
+    Info (21059): Implemented 81 output pins
+    Info (21061): Implemented 336 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
-    Info: Peak virtual memory: 4862 megabytes
-    Info: Processing ended: Tue Nov 25 20:21:09 2025
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:36
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Thu Nov 27 16:06:46 2025
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/output_files/ProcesadorMonocicloRISCV_VGA.map.smsg.
+The suppressed messages can be found in c:/Users/joseo/Desktop/Code/ArquitecturaComputadores/ProcesadorMonociclo/Quartus/output_files/ProcesadorMonocicloRISCV_VGA.map.smsg.
 
 

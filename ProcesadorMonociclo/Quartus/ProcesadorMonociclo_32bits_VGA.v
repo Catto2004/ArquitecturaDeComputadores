@@ -12,6 +12,14 @@ module ProcesadorMonociclo_32bits_VGA (
     // Salidas de depuración (LEDs)
     output [9:0]  LEDR,            // LEDs rojos - PC[9:0]
     
+    // Displays de 7 segmentos (PC en hexadecimal)
+    output [6:0]  HEX0,            // Display 0 - PC[3:0]
+    output [6:0]  HEX1,            // Display 1 - PC[7:4]
+    output [6:0]  HEX2,            // Display 2 - PC[11:8]
+    output [6:0]  HEX3,            // Display 3 - PC[15:12]
+    output [6:0]  HEX4,            // Display 4 - PC[19:16]
+    output [6:0]  HEX5,            // Display 5 - PC[23:20]
+    
     // Salidas VGA
     output [7:0]  VGA_R,           // VGA Red
     output [7:0]  VGA_G,           // VGA Green
@@ -221,7 +229,7 @@ module ProcesadorMonociclo_32bits_VGA (
     VGA_RISCV_Debug_Panel vga_display (
         .clk_vga(vga_clk),
         .clk_sys(CLOCK_50),
-        .reset(reset),
+        .reset(1'b0),  // VGA siempre activo (no afectado por reset)
         .x(vga_x),
         .y(vga_y),
         .video_on(vga_video_on),
@@ -243,6 +251,16 @@ module ProcesadorMonociclo_32bits_VGA (
         .vga_green(VGA_G),
         .vga_blue(VGA_B)
     );
+
+    // ========================================
+    // Displays de 7 Segmentos - Mostrar PC
+    // ========================================
+    hex_to_7seg hex0_decoder (.hex_digit(pc_current[3:0]),   .seg(HEX0));
+    hex_to_7seg hex1_decoder (.hex_digit(pc_current[7:4]),   .seg(HEX1));
+    hex_to_7seg hex2_decoder (.hex_digit(pc_current[11:8]),  .seg(HEX2));
+    hex_to_7seg hex3_decoder (.hex_digit(pc_current[15:12]), .seg(HEX3));
+    hex_to_7seg hex4_decoder (.hex_digit(pc_current[19:16]), .seg(HEX4));
+    hex_to_7seg hex5_decoder (.hex_digit(pc_current[23:20]), .seg(HEX5));
 
 endmodule
 
@@ -304,4 +322,41 @@ module DataMemory_32bits_VGA (
         vga_data = data_memory[vga_effective_addr];
     end
 
+endmodule
+
+// ========================================
+// Módulo: Decodificador Hexadecimal a 7 Segmentos
+// ========================================
+// Convierte un dígito hexadecimal (0-F) a señales de 7 segmentos
+// Segmentos: activos en BAJO (0 = encendido, 1 = apagado)
+//     _a_
+//   f|   |b
+//    |_g_|
+//   e|   |c
+//    |_d_| .dp
+
+module hex_to_7seg (
+    input  [3:0] hex_digit,  // Dígito hex de entrada (0-F)
+    output reg [6:0] seg     // Salida 7 segmentos: {g,f,e,d,c,b,a}
+);
+    always @(*) begin
+        case (hex_digit)
+            4'h0: seg = 7'b1000000;  // 0
+            4'h1: seg = 7'b1111001;  // 1
+            4'h2: seg = 7'b0100100;  // 2
+            4'h3: seg = 7'b0110000;  // 3
+            4'h4: seg = 7'b0011001;  // 4
+            4'h5: seg = 7'b0010010;  // 5
+            4'h6: seg = 7'b0000010;  // 6
+            4'h7: seg = 7'b1111000;  // 7
+            4'h8: seg = 7'b0000000;  // 8
+            4'h9: seg = 7'b0010000;  // 9
+            4'hA: seg = 7'b0001000;  // A
+            4'hB: seg = 7'b0000011;  // b
+            4'hC: seg = 7'b1000110;  // C
+            4'hD: seg = 7'b0100001;  // d
+            4'hE: seg = 7'b0000110;  // E
+            4'hF: seg = 7'b0001110;  // F
+        endcase
+    end
 endmodule
